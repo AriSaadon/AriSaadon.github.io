@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CV Ari Saadon</title>
+	</head>
+	<body>
+		<div id=left>
+			<div id=bio>
+				<img src=pf.png>
+				<h1>Ari Saadon</h1>
+				<h3>MSc Computing Science</h3>
+				<p>
+					11-09-1996<br>
+					Nederlandse<br>
+					Rijbewijs AM-B<br>
+					3526WP Utrecht<br>	
+					Mail voor tel. nummer<br>
+					<a href="mailto:ari._s@hotmail.com">ari._s@hotmail.com</a><br>
+				</p>
+			</div>
+		</div>
+		<div id=right>
+			<div id=info>
+				<h1 id=greet></h1>
+				<p>
+					ik ben Ari, een pas afgestudeerde software engineer
+					wonend in Utrecht. Ik heb een specialisatie in algoritmen 
+					en datastructuren, maar ook verdiepende kennis in data
+					science en multimedia technologie. Naast informatica 
+					heb ik ook een passie voor beeldende kunst, en teken/schilder
+					ik veel in mijn vrije tijd.  
+				</p>
+				<hr>
+				<h2>Opleiding</h2>
+				<p>
+					Universiteit Utrecht <i>(2018-2021)</i><br>
+					MSc Computing Science<br>
+					Cum laude behaald <br>
+					<br>
+					Universiteit Utrecht <i>(2014-2018)</i><br>
+					BSc Informatica<br>
+					Cum laude behaald<br>
+					<br>
+					Universiteit Utrecht <i>(2014-2015)</i><br>
+					BSc Wiskunde<br>
+					<br>
+					Baken trinitas gymnasium <i>(2008-2014)</i><br>
+					Gymnasium (NT + NG)<br>
+					Cum laude behaald<br>
+					<br>
+				</p>
+				<hr>
+				<!--
+				<h2>Werkervaring</h2>
+				<p>
+					Nog geen.
+				</p>
+				<hr>
+				-->
+				<h2>Vaardigheden</h2>
+				<p>
+					<b>Software ontwikkeling</b> - Tijdens mijn studie heb ik een 
+					goeie intuitie opgebouwd voor het oplossen van problemen
+					door te modelleren met oog op complexiteit en ruimte. 
+					Qua implementatie heb ik een sterke beheersing van de object 
+					georienteerde paradigma. In orde van ervaring: C#, Java, 
+					Python, C++. Daarnaast heb ik enigzins vaardigheid met een 
+					functionele paradigma via Haskell. Ook heb ik ervaring 
+					met SQL, webtalen, shelltalen en Git. Agile werken is ook zeker
+					geen probleem in groepsverband.<br>
+					<br>
+					<b>Vormgeven</b> - Naast mijn studie in de Informatica, heb ik me
+					veel bezig gehouden met beeldende kunst. Ik heb een sterke basis in 
+					design, tekenen, schilderen, 3d-modelleren en animeren. 
+					Verder kan ik goed overweg met Photoshop, Blender
+					en Unity.
+				</p>
+				<hr>
+				<h2>Talen</h2>
+				<p>
+					Uitstekend Nederlands<br>
+					Uitstekend Engels<br>
+					Matig Koerdisch (Kurmanci)<br>
+				</p>
+				<hr>
+				<h2>Hobby's en interesses</h2>
+				<p>
+					<b>Film</b> - Vooral films uit Frankrijk,
+					Italie, Japan en de VS rond de jaren zestig vind ik leuk. Maar ook films uit Iran, Taiwan en Hong Kong
+					van de jaren negentig. <br> 
+					<br>
+					<b>Muziek</b> - Ik luister van Hip-hop naar klassiek.
+					 Zelf speel ik ook piano, maar daar bak ik jammer genoeg nog niet veel van.<br> 
+					<br>
+					<b>Games</b> - Vroeger heb ik veel gegamed, laatste vijf jaren
+					is dat heel veel minder geworden, tot een punt waar ik nog een of twee games per jaar speel.
+					Ik vind game design nog wel heel interessant.  <br> 
+					<br>
+					<!--
+					<b>Geschiedenis</b> - Een paar periodes die me vooral boeien: 
+					de renaissance in Europa, vlak voor de eerste wereldoorlog 
+					internationaal en de culturele revolutie van de jaren zestig
+					in het westen.<br> 
+					<br>
+					<b>Biologie</b> - Psychobiologie, evolutie en emergentie zijn
+					onderwerpen er binnen die me aanspreken. Met name hoe veel 
+					vrije wil mensen hebben en hoeveel we onderworpen zijn aan onze
+					aanleg vind ik interessant om over te lezen.<br> 
+					<br>
+					-->
+				</p>
+			</div>
+		</div>
+	</body>
+	<style>
+		html {
+		  font-family: Ubuntu;
+		  background-color: #1c222e;
+		  text-align: left;
+		  color: #e3e3e3;
+		  line-height: 140%;
+		}
+
+		body {
+		  margin: 0;
+		  width: 100%;
+		}
+		
+		img {
+			align: center;
+			width: 11vw;
+			margin-bottom: 5%;
+			border-radius: 50%;
+			border: 3px solid #3aafc9;
+			box-shadow: 0px 0px 30px black;
+		}
+		
+		a {
+			color: white;
+		}
+
+		#left {
+		  background-color: #222a36;
+		  position: fixed;
+		  height: 100%;
+		  width: 33%;
+		}
+
+		#bio {
+		color: #f2f2f2;
+		  position: absolute;
+		  top: 20%;
+		  right: 0%;
+		  margin-right: 10%;
+		}
+
+		#right {
+		  position: fixed;
+		  left: 33%;
+		  width: 67%;
+		  height: 100%;
+		  overflow-y: scroll;
+		}
+
+		#info {
+		  position: absolute;
+		  width: 40%;
+		  top: 20%;
+		  left: 0%;
+		  margin-left: 5%
+		}
+	</style>
+	<script>
+		var element = document.getElementById("greet");
+		var date = new Date();
+		var hour = date.getHours();
+		if (hour >= 0 && hour < 6) element.innerHTML = "Goedenacht,"
+		if (hour >= 6 && hour < 12) element.innerHTML = "Goedemorgen,"
+		if (hour >= 12 && hour < 18) element.innerHTML = "Goedemiddag,"
+		if (hour >= 18 && hour < 24) element.innerHTML = "Goedenavond,"
+	</script>
+</html>
