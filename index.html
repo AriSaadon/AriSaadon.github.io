@@ -23,49 +23,24 @@
 	</div>
 	<div id=right>
 		<div id=info>
+			
 			<h1 id=greet></h1>
 			<p id="intro"> </p>
+			
 			<br> 
 			<hr>
 			<br>
-
-			<h2>Talen</h2>
-			<p> Uitstekend <a onclick="changeLanguage('Nederlands')">Nederlands</a>
-				<br> Excellent <a onclick="changeLanguage('English')">English</a>
-				<br><a onclick="changeGreet('Kurdi')">Kurdiya</a> xerab
-				<br> </p>
+			
+			<span id="languages"></span>
+		
 			<br>
 			<hr>
 			<br>
 
-
-			<h2>Vaardigheden</h2>
-			<p> Qua implementatie heb ik een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas.
-				Ik benader software met <span class="highlight">KISS</span>, <span class="highlight">SOLID</span>, <span class="highlight">TDD</span> en goed overwogen <span class="highlight">design patterns</span>.
-				Voor modelleren werk ik in het algemeen met een <span class="highlight">ER-model</span>.
-				Geen van deze principes is het best, ik denk dat elk project een eigen unieke combinatie van architecturele benaderingen nodig heeft.
-				<br>
-				<br>
-				Ik heb uitstekende beheersing van <span class="highlight">.NET</span> en programeer van jongs af aan veel in <span class="highlight">C#</span>.
-				In volgorde van ervaring kan ik ook werken met: 
-				<span class="highlight">Python</span>, <span class="highlight">Java</span>, <span class="highlight">C++</span>, <span class="highlight">Javascript</span>, <span class="highlight">Haskell</span> en <span class="highlight">C</span>. 
-				<br>
-				<br>
-				Verder kan ik overweg met <span class="highlight">Linux</span>, <span class="highlight">SQL</span>, <span class="highlight">HTML+CSS</span>, 
-				<span class="highlight">Shell-talen</span>, <span class="highlight">AI-copilot</span>, <span class="highlight">Git</span> en <span class="highlight">Azure-devops</span>. 
-				Ik sta open om andere technologien snel op te pakken. 
-				High performance code en low-level running time optimalisaties ben ik bekend mee. 
-				Agile werken met <span class="highlight">Scrum</span> heb ik ervaring mee.
-				<br>
-				<br>
-				Ik heb tijdens mijn studie een specialisatie opgebouwd voor het oplossen van complexe wiskundige problemen. 
-				Van het concreet modelleren van een probleem tot en met het zelfstandig implementeren en uitvoeren van exacte of heuristische <span class="highlight">algoritmen</span> met geoptimaliseerde <span class="highlight">data-structuren</span>  om te eindigen met een praktische oplossing.
-				<br>
-				<br>
-				Naast software houd ik me veel bezig met beeldende kunst. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. 
-				Verder kan ik goed overweg met <span class="highlight">Photoshop</span>, <span class="highlight">Blender</span> en <span class="highlight">Unity3D</span>.
-				<br>
-				<br> </p>
+			<span id="skills"></span>
+			
+			
+			<br> 
 			<hr>
 			<br>
 			
@@ -131,11 +106,18 @@
 		</div>
 	</div>
 </body>
+
+
+
+
+
+
 <style>
 html {
 	font-family: Lexend;
 	background-color: #1c2331;
 	text-align: left;
+	letter-spacing: 0.01em;
 	color: #d8d8d8;
 	line-height: 160%;
 }
@@ -150,7 +132,6 @@ body {
 }
 
 img {
-	align: center;
 	width: 11vw;
 	margin-bottom: 5%;
 	border-radius: 50%;
@@ -204,10 +185,10 @@ hr {
 #bio {
 	color: #f2f2f2;
 	position: absolute;
-	top: 15%;
+	top: 14%;
 	right: 0%;
 	margin-right: 10%;
-	animation: fadeInBio 0.7s ease-in, translateIn 0.3s ease;
+	animation: fadeInBio 0.7s ease-in, translateIn 0.3s ease-out;
 }
 
 #right {
@@ -218,6 +199,7 @@ hr {
 	overflow-y: scroll;
 	background-color: #1c2331;
 	transition: background-color 0.5s ease;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 #right:hover {
@@ -226,10 +208,10 @@ hr {
 
 #info {
 	position: absolute;
-	width: 43%;
+	width: 45%;
 	top: 20%;
 	left: 0%;
-	margin-left: 5%;
+	margin-left: 6%;
 	animation: fadeIn 1s ease-in, translateIn 0.5s ease;
 }
 
@@ -286,18 +268,26 @@ var translations = {
 			"I am a software engineer located in Utrecht, The Netherlands. During my studies I specialized in algorithms and datastructures. My interests at the moment lie in arranging software for new or existing projects to enable me to develop cleaner and faster. Besides software I have a passion for visual arts.",
 		bioDetails: 
 			"<br> Dutch	citizenship <br> Driver license AM-B <br> 3526WP Utrecht	<br> Mail for phone number",
+		languages:
+		"<h2>Languages</h2><p>Excellent <a onclick=changeLanguage('Nederlands')>Dutch</a><br>Excellent <a onclick=changeLanguage('English')>English</a><br>Mediocre <a onclick=changeGreet('Kurdi')>Kurdish</a><br></p>",
+		skills:
+			"<h2>Skills</h2><p> Implementation wise I have a strong foundation in object-oriented, functional and procedural paradigms.	I approach writing software with <span class=\"highlight\">KISS</span>, <span class=\"highlight\">SOLID</span>, <span class=\"highlight\">TDD</span> and <span class=\"highlight\">design patterns</span>.	For modelling I generally use an <span class=\"highlight\">ER-model</span>.	None of these principles are holy, I think every project requires its own unique combination of architectural approaches.	<br>	<br>	I have excellent proficiency in <span class=\"highlight\">.NET</span>, <span class=\"highlight\">C#</span> has been my go to language from an early age.	In order of experience, I can also work with: <span class=\"highlight\">Python</span>, <span class=\"highlight\">Java</span>, <span class=\"highlight\">C++</span>, <span class=\"highlight\">Javascript</span>, <span class=\"highlight\">Haskell</span> and <span class=\"highlight\">C</span>. <br>	<br>	Furthermore, I am comfortable with <span class=\"highlight\">Linux</span>, <span class=\"highlight\">SQL</span>, <span class=\"highlight\">HTML+CSS</span>, <span class=\"highlight\">Shell-languages</span>, <span class=\"highlight\">AI-copilot</span>, <span class=\"highlight\">Git</span> and <span class=\"highlight\">Azure-devops</span>. I am open to quickly pick up new technologies. I am familiar with writing high-performance code and low-level running-time optimizations. I have experience working Agile using <span class=\"highlight\">Scrum</span>.	<br> <br>	During my studies I have specialized in tackling complex mathematical problems. I can work towards a practical solution, from modelling a problem to implementing and executing exact or heuristic <span class=\"highlight\">algorithms</span> with optimized <span class=\"highlight\">data-structures</span>.	<br> <br>	Besides software I often occupy myself with visual arts. I have a foundation in design, UX, drawing, painting, 3d-modelling and animation. I am proficient in using <span class=\"highlight\">Photoshop</span>, <span class=\"highlight\">Blender</span> and <span class=\"highlight\">Unity3D</span>. <br> </p>"
 	},
 	'Nederlands': {
 		intro: 
 			"ik ben een software engineer wonend in Utrecht. Middels mijn studie heb ik een specialisatie in algoritmen en datastructuren. Mijn interesses liggen nu bij het puzzelen aan software voor nieuwe of bestaande projecten, om ze zelf netjes en sneller te ontwikkelen. Naast software heb ik een passie voor beeldende kunst.",
 		bioDetails: 
 			"<br> Nederlandse	<br> Rijbewijs AM-B <br> 3526WP Utrecht	<br> Mail voor tel. nummer",
+		languages:
+			"<h2>Talen</h2><p>Uitstekend <a onclick=changeLanguage('Nederlands')>Nederlands</a><br>Uitstekend <a onclick=changeLanguage('English')>Engels</a><br>Matig <a onclick=changeGreet('Kurdi')>Kurdisch</a><br></p>",
+		skills:
+			"<h2>Vaardigheden</h2><p> Qua implementatie heb ik een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas.	Ik benader software met <span class=\"highlight\">KISS</span>, <span class=\"highlight\">SOLID</span>, <span class=\"highlight\">TDD</span> en goed overwogen <span class=\"highlight\">design patterns</span>.	Voor modelleren werk ik in het algemeen met een <span class=\"highlight\">ER-model</span>.	Geen van deze principes is het best, ik denk dat elk project een eigen unieke combinatie van architecturele benaderingen nodig heeft.	<br>	<br>	Ik heb uitstekende beheersing van <span class=\"highlight\">.NET</span> en programeer van jongs af aan veel in <span class=\"highlight\">C#</span>.	In volgorde van ervaring kan ik ook werken met: <span class=\"highlight\">Python</span>, <span class=\"highlight\">Java</span>, <span class=\"highlight\">C++</span>, <span class=\"highlight\">Javascript</span>, <span class=\"highlight\">Haskell</span> en <span class=\"highlight\">C</span>. <br>	<br>	Verder kan ik overweg met <span class=\"highlight\">Linux</span>, <span class=\"highlight\">SQL</span>, <span class=\"highlight\">HTML+CSS</span>, <span class=\"highlight\">Shell-talen</span>, <span class=\"highlight\">AI-copilot</span>, <span class=\"highlight\">Git</span> en <span class=\"highlight\">Azure-devops</span>. Ik sta open om andere technologien snel op te pakken. High performance code en low-level running time optimalisaties ben ik bekend mee. Agile werken met <span class=\"highlight\">Scrum</span> heb ik ervaring mee.	<br> <br>	Ik heb tijdens mijn studie een specialisatie opgebouwd voor het oplossen van complexe wiskundige problemen. Van het concreet modelleren van een probleem tot en met het zelfstandig implementeren en uitvoeren van exacte of heuristische <span class=\"highlight\">algoritmen</span> met geoptimaliseerde <span class=\"highlight\">data-structuren</span>  om te eindigen met een praktische oplossing.	<br> <br>	Naast software houd ik me veel bezig met beeldende kunst. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. Verder kan ik goed overweg met <span class=\"highlight\">Photoshop</span>, <span class=\"highlight\">Blender</span> en <span class=\"highlight\">Unity3D</span>. <br> </p>"
 	},
 };
 
-function changeLanguage(language) {
+function FillLanguage(language) {
 	changeGreet(language);
-	console.log(language)
+	
 	var langTranslations = translations[language];
 
   for (const key in langTranslations) {
@@ -309,8 +299,26 @@ function changeLanguage(language) {
   }
 }
 
-var language = "Nederlands"
-changeLanguage(language)	
+function changeLanguage(language) {
+	var url = new URL(window.location.href)
+	url.searchParams.set('lang', language);
+	window.location.href = url;
+}
+
+function startPage() {
+	var url = new URL(window.location.href)
+	var lang = url.searchParams.get('lang');
+
+	if (lang) {
+		FillLanguage(lang)
+	}
+	else {
+		var language = "Nederlands"
+		changeLanguage(language)	
+	}
+}
+
+startPage();
 
 </script>
 
