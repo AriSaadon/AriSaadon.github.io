@@ -2,62 +2,98 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CV Ari Saadon</title>
 </head>
 
 <body>
 	<div id=left>
 		<div id=bio> <a href="mailto:ari._s@hotmail.com"><img src=pf.png></a>
-			<h1>Ari Saadon</h1>
+			<h1 id=name>Ari Saadon</h1>
 			<h3>Software Engineer</h3>
 			<h3>MSc. Computing Science</h3>
-			<p> 11-09-1996
-				<br> Nederlandse
-				<br> Rijbewijs AM-B
-				<br> 3526WP Utrecht
-				<br> Mail voor tel. nummer
+			<p> 
+				11-09-1996
+				<span id=bioDetails></span>
 				<br> <a href="mailto:ari._s@hotmail.com">ari._s@hotmail.com</a>
-				<br> </p>
+				<br> 
+			</p>
 		</div>
 	</div>
 	<div id=right>
 		<div id=info>
 			<h1 id=greet></h1>
-			<p> Ik ben een software engineer wonend in Utrecht. Tijdens mijn studie heb ik mij gespecialiseerd in algoritmen en datastructuren. Mijn interesses liggen nu bij het puzzelen aan software architectuur voor nieuwe of bestaande projecten, om ze netjes en snel te ontwikkelen. Naast software heb ik ook een grote passie voor beeldende kunst.
-				<br>
-				<br> </p>
+			<p id="intro"> </p>
+			<br> 
 			<hr>
 			<br>
+
+			<h2>Talen</h2>
+			<p> Uitstekend <a onclick="changeLanguage('Nederlands')">Nederlands</a>
+				<br> Excellent <a onclick="changeLanguage('English')">English</a>
+				<br><a onclick="changeGreet('Kurdi')">Kurdiya</a> xerab
+				<br> </p>
+			<br>
+			<hr>
+			<br>
+
+
 			<h2>Vaardigheden</h2>
-			<p> <b>Software engineering</b> - Tijdens mijn studie en eigen projecten heb ik veel theoretische en praktische kennis opgebouwd. Ik ben een sterke aanhanger van KISS, code refactoren en goed overwogen architectuur met design patterns. Qua implementatie heb ik een sterke beheersing van de object georienteerde paradigma. In volgorde van ervaring: C#, Java, Python, C++. Daarnaast heb ik enigzins vaardigheid met een functionele paradigma met Haskell. Ook heb ik ervaring met linux, SQL, AI, webtalen, shelltalen en Git. Ik ben verder zeker niet bang om de nieuwste technologien te leren. High performance code en running time optimalisaties ben ik ook goed bekend mee. Agile werken en Scrum is ook geen probleem in groepsverband.
+			<p> Qua implementatie heb ik een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas.
+				Ik benader software met <span class="highlight">KISS</span>, <span class="highlight">SOLID</span>, <span class="highlight">TDD</span> en goed overwogen <span class="highlight">design patterns</span>.
+				Voor modelleren werk ik in het algemeen met een <span class="highlight">ER-model</span>.
+				Geen van deze principes is het best, ik denk dat elk project een eigen unieke combinatie van architecturele benaderingen nodig heeft.
 				<br>
-				<br> <b>Wiskundig modelleren</b> - Tijdens mijn studie heb ik ook een goeie intuitie opgebouwd voor het oplossen van wiskundige problemen. Van het concreet modelleren van een vraagstuk tot en met het zelfstandig implementeren en uitvoeren van exacte of heuristische methodes om te eindigen met een praktische oplossing.
 				<br>
-				<br> <b>Visueel vormgeven</b> - Naast mijn studie in de Informatica, heb ik me veel bezig gehouden met beeldende kunst. Ik heb een sterke basis in design, tekenen, schilderen, 3d-modelleren en animeren. Verder kan ik goed overweg met Photoshop, Blender en Unity.
+				Ik heb uitstekende beheersing van <span class="highlight">.NET</span> en programeer van jongs af aan veel in <span class="highlight">C#</span>.
+				In volgorde van ervaring kan ik ook werken met: 
+				<span class="highlight">Python</span>, <span class="highlight">Java</span>, <span class="highlight">C++</span>, <span class="highlight">Javascript</span>, <span class="highlight">Haskell</span> en <span class="highlight">C</span>. 
+				<br>
+				<br>
+				Verder kan ik overweg met <span class="highlight">Linux</span>, <span class="highlight">SQL</span>, <span class="highlight">HTML+CSS</span>, 
+				<span class="highlight">Shell-talen</span>, <span class="highlight">AI-copilot</span>, <span class="highlight">Git</span> en <span class="highlight">Azure-devops</span>. 
+				Ik sta open om andere technologien snel op te pakken. 
+				High performance code en low-level running time optimalisaties ben ik bekend mee. 
+				Agile werken met <span class="highlight">Scrum</span> heb ik ervaring mee.
+				<br>
+				<br>
+				Ik heb tijdens mijn studie een specialisatie opgebouwd voor het oplossen van complexe wiskundige problemen. 
+				Van het concreet modelleren van een probleem tot en met het zelfstandig implementeren en uitvoeren van exacte of heuristische <span class="highlight">algoritmen</span> met geoptimaliseerde <span class="highlight">data-structuren</span>  om te eindigen met een praktische oplossing.
+				<br>
+				<br>
+				Naast software houd ik me veel bezig met beeldende kunst. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. 
+				Verder kan ik goed overweg met <span class="highlight">Photoshop</span>, <span class="highlight">Blender</span> en <span class="highlight">Unity3D</span>.
 				<br>
 				<br> </p>
 			<hr>
 			<br>
 			
-			<h2>Talen</h2>
-			<p> Uitstekend Nederlands
-				<br> Uitstekend Engels
-				<br> Matig Koerdisch (Kurmanci)
-				<br> </p>
-			<br>
-			<hr>
-			<br>
+			
 			
 			<h2>Werkervaring</h2>
-			<p> Metrohm Autolab
+			<p> <strong class=Company>Metrohm Autolab</strong>
 				<br> Software Engineer
-				<br> Part-time <i>2021-momenteel</i>
+				<br> Part-time (0,6 fte) <i>2021-momenteel</i>
+				<ul>
+					<li>Mocking, fixtures en code-coverage van back-end unit-tests sterk verbeterd</li>
+					<li>Disconnectie en profiling onderzoek van device throughput uitgevoerd</li>
+					<li>Verschillende services van bestaande API uitgebreid</li>
+					<li>Gedeeld technisch leiderschap genomen van back-end</li>
+					<li>Meegeholpen met design, PoC en implementatie van een multi-threaded data-processing systeem</li>
+					<li>Talloze bugfixes in back-end, soms front-end en embedded-software</li>
+					<li>Business-model migratie uitgevoerd van <span class="highlight">LiteDB</span> naar <span class="highlight">RavenDB</span></li>
+					<li>Back-end developer workflow gedeeltelijk geautomatiseerd met <span class="highlight">Powershell</span> en <span class="highlight">CI</span> pipeline</li>
+				</ul>  
+				<br> <strong class=Company>Taal doet meer</strong>
+				<br> Taalmentor achterstandskind
+				<br> Vrijwillig wekelijks <i>2021-2022</i>
 				<br>
-				<br> Hotel van der Valk
+				<br> <strong class=Company>Hotel van der Valk</strong>
 				<br> Banqueting en bediening medewerker
 				<br> Part-time <i>2021</i>
 				<br>
-				<br> Just Eat Takeaway.com
+				<br> <strong class=Company>Just Eat Takeaway.com</strong>
 				<br> Remote delivery courier
 				<br> Part-time <i>2021</i>
 				<br>
@@ -67,35 +103,29 @@
 			
 			
 			<h2>Opleiding</h2>
-			<p> Universiteit Utrecht <i>(2018-2021)</i>
-				<br> MSc. Computing Science
-				<br> Cum laude behaald.
+			<p> <strong>MSc. Computing Science</strong>
+				<br> Universiteit Utrecht <i>(2018-2021)</i>
+				<br> Cum laude behaald
 				<br>
+				<br> <strong>BSc. Informatica</strong>
 				<br> Universiteit Utrecht <i>(2014-2018)</i>
-				<br> BSc. Informatica
-				<br> Cum laude behaald.
+				<br> Cum laude behaald
 				<br>
-				<br> Universiteit Utrecht <i>(2014-2015)</i>
-				<br> BSc. Wiskunde
-				<br> Halverwege gestopt met dubbele major programma.
-				<br>
+				<br> <strong>Gymnasium (NT + NG)</strong>
 				<br> Baken trinitas gymnasium <i>(2008-2014)</i>
-				<br> Gymnasium (NT + NG)
-				<br> Cum laude behaald.
+				<br> Cum laude behaald
 				<br>
 				<br> </p>
 			<hr>
 			<br>
 						
 			
-			<h2>Hobby's en interesses</h2>
-			<p> <b>Film</b> - Vooral films uit Frankrijk, Italie, Japan en de VS rond de jaren zestig vind ik mooi. Maar ook films uit Iran, Taiwan en Hong Kong van de jaren negentig.
+			<h2>Interesses</h2>
+			<p> Binnen de software zit ik me nu te verdiepen in het beter omgaan met AI en het integreren ervan in mijn workflow.
+				Ik probeer mezelf ook te richten op het kunnen ontwerpen van architectuur voor grotere systemen. 
 				<br>
-				<br> <b>Muziek</b> - Ik luister van Hip-hop naar klassiek. Zelf speel ik ook piano, maar daar ben ik jammer genoeg nog niet heel goed in.
 				<br>
-				<br> <b>Games</b> - Vroeger heb ik veel gegamed, laatste jaren is dat veel minder geworden, tot een punt waar ik nog een of twee games per jaar speel. Ik vind de mogelijkheden van het medium nog wel heel interessant.
-				<br>
-				<br> <b>Geschiedenis</b> - Sommige periodes in de geschiedenis interesseren me heel erg. De late middeleeuwen in Europa en de korte periode voor de eerste wereldoorlog globaal vind ik boeiende tijdvakken.
+				Buiten de software heb ik een interesse in film, games, tekenen, litratuur, fitness, geschiedenis, biologie, psychologie en filosofie.
 				<br>
 				<br> </p>
 		</div>
@@ -107,12 +137,16 @@ html {
 	background-color: #1c2331;
 	text-align: left;
 	color: #d8d8d8;
-	line-height: 140%;
+	line-height: 160%;
 }
 
 body {
 	margin: 0;
 	width: 100%;
+}
+
+#name, #greet {
+	color: #3aafc9;
 }
 
 img {
@@ -132,11 +166,13 @@ img:hover {
 
 a {
 	color: white;
-	transition: color 0.3s;
+	transition: color 0.5s;
+	text-decoration: underline;
 }
 
 a:hover {
 	color: #3aafc9;
+	cursor: pointer;
 }
 
 hr {
@@ -144,11 +180,20 @@ hr {
 	border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
+.highlight {
+  color: #4bc9c9;
+  font-weight: 600;
+  background-color: rgba(58, 175, 201, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: inline;
+}
+
 #left {
 	background-color: #1c2331;
 	position: fixed;
 	height: 100%;
-	width: 36%;
+	width: 38%;
 	transition: background-color 0.5s ease;
 }
 
@@ -167,8 +212,8 @@ hr {
 
 #right {
 	position: fixed;
-	left: 36%;
-	width: 64%;
+	left: 38%;
+	width: 62%;
 	height: 100%;
 	overflow-y: scroll;
 	background-color: #1c2331;
@@ -181,7 +226,7 @@ hr {
 
 #info {
 	position: absolute;
-	width: 40%;
+	width: 43%;
 	top: 20%;
 	left: 0%;
 	margin-left: 5%;
@@ -207,13 +252,66 @@ hr {
 }
 </style>
 <script>
-var element = document.getElementById("greet");
-var date = new Date();
-var hour = date.getHours();
-if(hour >= 0 && hour < 6) element.innerHTML = "Goedenacht,"
-if(hour >= 6 && hour < 12) element.innerHTML = "Goedemorgen,"
-if(hour >= 12 && hour < 18) element.innerHTML = "Goedemiddag,"
-if(hour >= 18 && hour < 24) element.innerHTML = "Goedenavond,"
+function changeGreet(language) {
+	var element = document.getElementById("greet");
+	var date = new Date();
+	var hour = date.getHours();
+	
+	if (language == "Nederlands")
+	{
+		if(hour >= 0 && hour < 6) element.textContent = "Goeienacht,"
+		if(hour >= 6 && hour < 12) element.textContent = "Goeiemorgen,"
+		if(hour >= 12 && hour < 18) element.textContent = "Goeiemiddag,"
+		if(hour >= 18 && hour < 24) element.textContent = "Goeienavond,"
+	}
+	else if (language == "English")
+	{
+		if(hour >= 0 && hour < 6) element.textContent = "Good night,"
+		if(hour >= 6 && hour < 12) element.textContent = "Good morning,"
+		if(hour >= 12 && hour < 18) element.textContent = "Good afternoon,"
+		if(hour >= 18 && hour < 24) element.textContent = "Good evening,"
+	}
+	else if (language == "Kurdi")
+	{
+		if(hour >= 0 && hour < 6) element.textContent = "Şev baş,"
+		if(hour >= 6 && hour < 12) element.textContent = "Beyanî baş,"
+		if(hour >= 12 && hour < 18) element.textContent = "nîvro baş,"
+		if(hour >= 18 && hour < 24) element.textContent = "Êvar baş,"
+	}
+}
+
+var translations = {
+	'English': {
+		intro: 
+			"I am a software engineer located in Utrecht, The Netherlands. During my studies I specialized in algorithms and datastructures. My interests at the moment lie in arranging software for new or existing projects to enable me to develop cleaner and faster. Besides software I have a passion for visual arts.",
+		bioDetails: 
+			"<br> Dutch	citizenship <br> Driver license AM-B <br> 3526WP Utrecht	<br> Mail for phone number",
+	},
+	'Nederlands': {
+		intro: 
+			"ik ben een software engineer wonend in Utrecht. Middels mijn studie heb ik een specialisatie in algoritmen en datastructuren. Mijn interesses liggen nu bij het puzzelen aan software voor nieuwe of bestaande projecten, om ze zelf netjes en sneller te ontwikkelen. Naast software heb ik een passie voor beeldende kunst.",
+		bioDetails: 
+			"<br> Nederlandse	<br> Rijbewijs AM-B <br> 3526WP Utrecht	<br> Mail voor tel. nummer",
+	},
+};
+
+function changeLanguage(language) {
+	changeGreet(language);
+	console.log(language)
+	var langTranslations = translations[language];
+
+  for (const key in langTranslations) {
+    const element = document.getElementById(key);
+
+    if (element) {
+      element.innerHTML = langTranslations[key];
+    }
+  }
+}
+
+var language = "Nederlands"
+changeLanguage(language)	
+
 </script>
 
 </html>
