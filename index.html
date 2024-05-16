@@ -57,11 +57,11 @@
 				const range = upperKeyframe.progress - lowerKeyframe.progress;
 				const localProgress = range !== 0 ? (scrollProgress - lowerKeyframe.progress) / range : 0;
 
-				const width = Math.min(window.innerWidth, 1000) * this.lerp(lowerKeyframe.width, upperKeyframe.width, localProgress);
-				const height = window.innerHeight * this.lerp(lowerKeyframe.height, upperKeyframe.height, localProgress);
+				const width = Math.min(window.innerWidth - 20, 1000) * this.lerp(lowerKeyframe.width, upperKeyframe.width, localProgress);
+				const height = this.lerp(lowerKeyframe.height, upperKeyframe.height, localProgress);
 
 				this.element.style.width = `${width}px`;
-				this.element.style.height = `${height}px`;
+				this.element.style.height = `${height}%`;
 				this.element.style.left = `${this.lerp(lowerKeyframe.x, upperKeyframe.x, localProgress)}vw`;
 				this.element.style.top = `${this.lerp(lowerKeyframe.y, upperKeyframe.y, localProgress)}vh`;
 				this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
@@ -114,6 +114,8 @@
 			  scrollProgress += delta * 0.05;
 			  scrollProgress = (scrollProgress % 1 + 1) % 1;
 
+			document.body.style.width = `${window.innerWidth - 10}px`;
+  			document.body.style.height = `${window.innerHeight}px`;
 			  squares.forEach(square => square.adjust(scrollProgress));
 			  requestAnimationFrame(animate);
 			}
@@ -132,18 +134,11 @@
 			document.addEventListener('touchmove', function(event) {
 			  const touchEndY = event.touches[0].clientY;
 			  const deltaY = touchStartY - touchEndY;
-			  targetProgress += deltaY * 0.001; // Adjust the multiplier as needed for sensitivity
+			  targetProgress += deltaY * 0.0005; // Adjust the multiplier as needed for sensitivity
 			  targetProgress = (targetProgress % 1 + 1) % 1;
 			  touchStartY = touchEndY;
 			}, { passive: false });
 		
-		function handleResize() {
-  squares.forEach(square => square.adjust(scrollProgress));
-}
-
-// Adjust on resize
-window.addEventListener('resize', handleResize);
-
 			animate();
 
 		</script>
