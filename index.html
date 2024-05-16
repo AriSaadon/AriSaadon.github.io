@@ -122,7 +122,13 @@
 			  targetProgress += event.deltaY * 0.00015;
 			  targetProgress = (targetProgress % 1 + 1) % 1;
 			}, { passive: false });
-
+			
+			let touchStartY = 0;
+			
+			document.addEventListener('touchstart', function(event) {
+			  touchStartY = event.touches[0].clientY;
+			}, { passive: false });
+			
 			document.addEventListener('touchmove', function(event) {
 			  const touchEndY = event.touches[0].clientY;
 			  const deltaY = touchStartY - touchEndY;
