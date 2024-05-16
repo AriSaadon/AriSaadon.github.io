@@ -59,7 +59,7 @@
 
 				const width = Math.min(window.innerWidth - 20, 1000) * this.lerp(lowerKeyframe.width, upperKeyframe.width, localProgress);
 				const height = window.innerHeight * this.lerp(lowerKeyframe.height, upperKeyframe.height, localProgress);
-				const x =  Math.min(window.innerWidth - 20, 1000) * this.lerp(lowerKeyframe.x, upperKeyframe.x, localProgress)
+				const x =  window.innerWidth * this.lerp(lowerKeyframe.x, upperKeyframe.x, localProgress)
 				const y = window.innerHeight * this.lerp(lowerKeyframe.y, upperKeyframe.y, localProgress);
 
 				this.element.style.width = `${width}px`;
@@ -77,10 +77,10 @@
 
 			const squares = [
 			  new Square('squareA', 0.0, [
-				{ progress: 0.0, x: 0.5, y: 0, width: 1, height: 0.85, border: 0 },
-				{ progress: 0.2, x: 0.5, y: 1, width: 1, height: 0.1, border: 10 },
-				{ progress: 0.8, x: 0.5, y: 1, width: 1, height: 0.1, border: 10 },
-				{ progress: 1.0, x: 0.5, y: 0, width: 1, height: 0.85, border: 0 },
+				{ progress: 0.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0 },
+				{ progress: 0.2, x: 0.5, y: 0.01, width: 1, height: 0.1, border: 10 },
+				{ progress: 0.8, x: 0.5, y: 0.01, width: 1, height: 0.1, border: 10 },
+				{ progress: 1.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0 },
 			  ]),
 			  new Square('squareB', 0.2, [
 				{ progress: 0.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0 },
