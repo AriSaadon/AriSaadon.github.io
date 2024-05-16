@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dynamic Squares</title>
          <style>
+
+		 body {
+    overflow: hidden;
+}
 .square {
   position: absolute;
   left: 50%;
@@ -137,6 +141,9 @@
 			  targetProgress += deltaY * 0.0005; // Adjust the multiplier as needed for sensitivity
 			  targetProgress = (targetProgress % 1 + 1) % 1;
 			  touchStartY = touchEndY;
+
+			event.preventDefault();  // Prevent the default pull-to-refresh behavior
+
 			}, { passive: false });
 		
 			animate();
