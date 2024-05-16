@@ -1,292 +1,131 @@
 <!DOCTYPE html>
-<html>
-<link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
-<head>
-	<meta charset="UTF-8">
-    <meta name="viewport" initial-scale=0.9">
-	<title>CV Ari Saadon</title>
-</head>
+<html lang="en">
 
-<body>
-	<div id=left>
-		<div id=bio> 
-			<a href="mailto:ari._s@hotmail.com"><img src=pf.png></a>
-			<h1 id=name>Ari Saadon</h1>
-			<h3>Software Engineer</h3>
-			<h3>MSc. Computing Science</h3>
-			<p> 
-				11-09-1996
-				<span id=bioDetails></span>
-				<br> <a href="mailto:ari._s@hotmail.com">ari._s@hotmail.com</a>
-				<br> 
-			</p>
-		</div>
-	</div>
-	<div id=right>
-		<div id=info>
-			
-			<h1 id=greet></h1>
-			<p id="intro"> </p>
-			
-			<br> 
-			<hr>
-			<br>
-			
-			<span id="languages"></span>
-		
-			<br>
-			<hr>
-			<br>
-
-			<span id="skills"></span>
-						
-			<br> 
-			<hr>
-			<br>
-						
-			<span id="workExperience"></span>
-			
-			<br>
-			<hr>
-			<br>
-			
-			<span id="education"></span>
-			
-			<br>
-			<hr>
-			<br>
-						
-			<span id="interests"></span>
-			
-		</div>
-	</div>
-</body>
-
-
-
-
-
-
-<style>
-html {
-	font-family: Lexend;
-	background-color: #1c2331;
-	text-align: left;
-	letter-spacing: 0.01em;
-	color: #d8d8d8;
-	line-height: 160%;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Squares</title>
+         <style>
+.square {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
-body {
-	margin: 0;
-	width: 100%;
+#squareA {
+  background-color: blue;
 }
 
-#name, #greet {
-	color: #3aafc9;
+#squareB {
+  background-color: red;
 }
 
-img {
-	width: 11vw;
-	margin-bottom: 5%;
-	border-radius: 50%;
-	border: 3px solid #888888;
-	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-	transition: transform 0.3s ease, border 0.5s ease;
+#squareC {
+  background-color: orange;
 }
 
-img:hover {
-	transform: scale(1.1);
-	border: 3px solid #3aafc9;
+#squareD {
+  background-color: green;
 }
+  </style>
+    </head>
 
-a {
-	color: white;
-	transition: color 0.5s;
-	text-decoration: underline;
-}
+    <body>
+        <div id="squareA" class="square"></div>
+        <div id="squareB" class="square"></div>
+        <div id="squareC" class="square"></div>
+        <div id="squareD" class="square"></div>
+        <script>
+			class Square {
+			  constructor(elementId, targetProgress, keyframes) {
+				this.element = document.getElementById(elementId);
+				this.keyframes = keyframes;
+				this.targetProgress = targetProgress;
+				this.addClickListener();
+			  }
 
-a:hover {
-	color: #3aafc9;
-	cursor: pointer;
-}
+			  addClickListener() {
+				this.element.addEventListener('click', () => {
+				  targetProgress = this.targetProgress;
+				});
+			  }
 
-hr {
-	border: none;
-	border-top: 2px solid rgba(255, 255, 255, 0.1);
-}
+			  adjust(scrollProgress) {
+				const lowerKeyframe = this.keyframes.slice().reverse().find(k => k.progress <= scrollProgress) || this.keyframes[0];
+				const upperKeyframe = this.keyframes.find(k => k.progress >= scrollProgress) || lowerKeyframe;
 
-.highlight {
-  color: #4bc9c9;
-  font-weight: 600;
-  background-color: rgba(58, 175, 201, 0.1);
-  padding: 2px 4px;
-  border-radius: 4px;
-  display: inline;
-}
+				const range = upperKeyframe.progress - lowerKeyframe.progress;
+				const localProgress = range !== 0 ? (scrollProgress - lowerKeyframe.progress) / range : 0;
 
-#left {
-	background-color: #1c2331;
-	position: fixed;
-	height: 100%;
-	width: 38%;
-	transition: background-color 0.5s ease;
-}
+				const width = Math.min(window.innerWidth, 1000) * this.lerp(lowerKeyframe.width, upperKeyframe.width, localProgress);
+				const height = window.innerHeight * this.lerp(lowerKeyframe.height, upperKeyframe.height, localProgress);
 
-#left:hover {
-	background-color: #1f2a39;
-}
+				this.element.style.width = `${width}px`;
+				this.element.style.height = `${height}px`;
+				this.element.style.left = `${this.lerp(lowerKeyframe.x, upperKeyframe.x, localProgress)}vw`;
+				this.element.style.top = `${this.lerp(lowerKeyframe.y, upperKeyframe.y, localProgress)}vh`;
+				this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
+			  }
 
-#bio {
-	color: #f2f2f2;
-	position: absolute;
-	top: 14%;
-	right: 0%;
-	margin-right: 10%;
-	animation: fadeInBio 0.7s ease-in, translateIn 0.3s ease-out;
-}
+			  lerp(start, end, t) {
+				t = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+				return start + (end - start) * t;
+			  }
+			}
 
-#right {
-	position: fixed;
-	left: 38%;
-	width: 62%;
-	height: 100%;
-	overflow-y: scroll;
-	background-color: #1c2331;
-	transition: background-color 0.5s ease;
-	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-}
+			const squares = [
+			  new Square('squareA', 0.0, [
+				{ progress: 0.0, x: 50, y: 0, width: 1, height: 0.85, border: 0 },
+				{ progress: 0.2, x: 50, y: 1, width: 1, height: 0.1, border: 10 },
+				{ progress: 0.8, x: 50, y: 1, width: 1, height: 0.1, border: 10 },
+				{ progress: 1.0, x: 50, y: 0, width: 1, height: 0.85, border: 0 },
+			  ]),
+			  new Square('squareB', 0.2, [
+				{ progress: 0.0, x: 50, y: 85, width: 1, height: 0.05, border: 0 },
+				{ progress: 0.2, x: 50, y: 12, width: 1, height: 0.78, border: 0 },
+				{ progress: 0.4, x: 50, y: 12, width: 1, height: 0.1, border: 10 },
+				{ progress: 0.8, x: 50, y: 12, width: 1, height: 0.1, border: 10 },
+				{ progress: 1.0, x: 50, y: 85, width: 1, height: 0.05, border: 0 },
+			  ]),
+			  new Square('squareC', 0.4, [
+				{ progress: 0.2, x: 50, y: 90, width: 1, height: 0.05, border: 0 },
+				{ progress: 0.4, x: 50, y: 23, width: 1, height: 0.72, border: 0 },
+				{ progress: 0.6, x: 50, y: 23, width: 1, height: 0.1, border: 10 },
+				{ progress: 0.8, x: 50, y: 23, width: 1, height: 0.1, border: 10 },
+				{ progress: 1.0, x: 50, y: 90, width: 1, height: 0.05, border: 0 },
+			  ]),
+			  new Square('squareD', 0.6, [
+				{ progress: 0.4, x: 50, y: 95, width: 1, height: 0.05, border: 0 },
+				{ progress: 0.6, x: 50, y: 34, width: 1, height: 0.66, border: 0 },
+				{ progress: 0.8, x: 50, y: 34, width: 1, height: 0.1, border: 10 },
+				{ progress: 1.0, x: 50, y: 95, width: 1, height: 0.05, border: 0 },
+			  ])
+			];
 
-#right:hover {
-	background-color: #1f2a39;
-}
+			let scrollProgress = 0.0;
+			let targetProgress = 0.0;
 
-#info {
-	position: absolute;
-	width: 45%;
-	top: 20%;
-	left: 0%;
-	margin-left: 6%;
-	animation: fadeIn 1s ease-in, translateIn 0.5s ease;
-}
+			function animate() {
+			  let delta = targetProgress - scrollProgress;
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
+			  if (delta > 0.5) delta -= 1;
+			  if (delta < -0.5) delta += 1;
 
-@keyframes translateIn {
-	from {
-		transform: translateY(-20px);
-	}
-	to {
-		transform: translateY(0px);
-	}
-}
-</style>
-<script>
-function changeGreet(language) {
-	var element = document.getElementById("greet");
-	var date = new Date();
-	var hour = date.getHours();
-	
-	if (language == "Nederlands")
-	{
-		if(hour >= 0 && hour < 6) element.textContent = "Goeienacht,"
-		if(hour >= 6 && hour < 12) element.textContent = "Goeiemorgen,"
-		if(hour >= 12 && hour < 18) element.textContent = "Goeiemiddag,"
-		if(hour >= 18 && hour < 24) element.textContent = "Goeienavond,"
-	}
-	else if (language == "English")
-	{
-		if(hour >= 0 && hour < 6) element.textContent = "Good night,"
-		if(hour >= 6 && hour < 12) element.textContent = "Good morning,"
-		if(hour >= 12 && hour < 18) element.textContent = "Good afternoon,"
-		if(hour >= 18 && hour < 24) element.textContent = "Good evening,"
-	}
-	else if (language == "Kurdi")
-	{
-		if(hour >= 0 && hour < 6) element.textContent = "Şev baş,"
-		if(hour >= 6 && hour < 12) element.textContent = "Beyanî baş,"
-		if(hour >= 12 && hour < 18) element.textContent = "nîvro baş,"
-		if(hour >= 18 && hour < 24) element.textContent = "Êvar baş,"
-	}
-}
+			  scrollProgress += delta * 0.05;
+			  scrollProgress = (scrollProgress % 1 + 1) % 1;
 
-var translations = {
-	'English': {
-		intro: 
-			"I am a software engineer located in Almere, The Netherlands. During my studies I specialized in algorithms and data-structures. My interests at the moment lie in arranging software for new or existing projects to enable me to develop cleaner and faster. Besides software I have a passion for visual arts.",
-		bioDetails: 
-			"<br> Dutch	citizenship <br> Driver license AM-B <br> 1318LZ Almere	<br> Mail for phone number",
-		languages:
-		"<h2>Languages</h2><p>Excellent <a onclick=changeLanguage('Nederlands')>Dutch</a><br>Excellent <a onclick=changeLanguage('English')>English</a><br>Intermediate <a onclick=changeGreet('Kurdi')>Kurdish</a><br></p>",
-		skills:
-			"<h2>Skills</h2><p> Implementation wise I have a strong foundation in object-oriented, functional and procedural paradigms.	I approach writing software with <span class=\"highlight\">KISS</span>, <span class=\"highlight\">SOLID</span>, <span class=\"highlight\">TDD</span> and <span class=\"highlight\">design patterns</span>.	For modelling I generally use an <span class=\"highlight\">ER-model</span>.	None of these principles are holy, I think every project requires its own unique combination of architectural approaches.	<br>	<br>	I have excellent proficiency in <span class=\"highlight\">.NET</span>, <span class=\"highlight\">C#</span> has been my go to language from an early age.	In order of experience, I can also work with: <span class=\"highlight\">Python</span>, <span class=\"highlight\">Java</span>, <span class=\"highlight\">C++</span>, <span class=\"highlight\">Javascript</span>, <span class=\"highlight\">Haskell</span> and <span class=\"highlight\">C</span>. <br>	<br>	Furthermore, I am comfortable with <span class=\"highlight\">Linux</span>, <span class=\"highlight\">SQL</span>, <span class=\"highlight\">HTML+CSS</span>, <span class=\"highlight\">Shell-languages</span>, <span class=\"highlight\">AI-copilot</span>, <span class=\"highlight\">Git</span> and <span class=\"highlight\">Azure-devops</span>. I am open to quickly pick up new technologies. I am familiar with writing high-performance code and low-level running-time optimizations. <br> <br> Although I thrive on tackling problems fully on my own, writing software is often a team-effort. In those settings I try to be a team-player by always being ready to collaborate and help my team as much as needed. I have experience working in a team with Agile using <span class=\"highlight\">Scrum</span>.	<br> <br>	During my studies I have specialized in tackling complex mathematical problems. I can work towards a practical solution, from modelling a problem to implementing and executing exact or heuristic <span class=\"highlight\">algorithms</span> with optimized <span class=\"highlight\">data-structures</span>.	<br> <br>	Besides software I often occupy myself with visual arts. I have a foundation in design, UX, drawing, painting, 3d-modelling and animation. I am proficient in using <span class=\"highlight\">Photoshop</span>, <span class=\"highlight\">Blender</span> and <span class=\"highlight\">Unity3D</span>. <br> </p>",
-		workExperience:
-			"<h2>Work experience</h2> <p> <strong class=Company>Metrohm Autolab</strong>	<br> Software Engineer <br> Part-time (0,6 FTE) <i>2021-2023</i>				<ul>					<li>Strongly improved mocking, fixtures and code-coverage of the back-end unit-tests</li>					<li>Performed profiling and stability investigation of device throughput</li>					<li>Extended the existing API with various services</li>					<li>Taken shared technical leadership of the back-end</li>					<li>Contributed to the design, PoC and implementation of a multi-threaded data-processing system</li>					<li>Countless bugfixes in back-end, sometimes front-end and embedded-software</li>					<li>Performed a business-model migration from <span class=\"highlight\">LiteDB</span> to <span class=\"highlight\">RavenDB</span></li>					<li>Greatly optimized back-end developer workflow with <span class=\"highlight\">Powershell</span> and <span class=\"highlight\">CI</span> pipeline</li>				</ul>  				<br> <strong class=Company>Atelier STOK</strong>				<br> Organizer portet evening				<br> Voluntarily part-time <i>2020-2022</i>				<br>				<br> <strong class=Company>Taal doet meer</strong>				<br> Language mentor for disadvantaged child				<br> Voluntarily part-time <i>2021-2022</i>				<br>				<br> <strong class=Company>Hotel van der Valk</strong>				<br> Banqueting and service worker				<br> Part-time <i>2021</i>				<br>				<br> <strong class=Company>Just Eat Takeaway.com</strong>				<br> Remote delivery courier				<br> Part-time <i>2021</i>				<br>			</p>",
-		education:
-			"<h2>Education</h2>			<p> <strong>Master of Science in Computing Science</strong><br> Utrecht University <i>(2018-2021)</i><br> Cum laude graduated				<br><br> <strong>Bachelor of Science in Computer Science</strong><br> Utrecht University <i>(2014-2018)</i><br> Cum laude graduated			<br><br> <strong>Gymnasium (NT + NG)</strong>	<br> Baken trinitas gymnasium <i>(2008-2014)</i><br> Cum laude graduated<br> </p>",
-		interests:
-			"<h2>Interests</h2><p> Within software I am currently trying to become more proficient working with AI and integrating it in my workflow. I am also focusing on being able to design architecture for more complex and larger-scale software systems. <br> <br>		Besides software I have interests in film, games, drawing, literature, fitness, history, biology, psychology and philosophy.<br> </p>",
-	},
-	'Nederlands': {
-		intro: 
-			"ik ben een software engineer wonend in Almere. Middels mijn studie heb ik een specialisatie in algoritmen en data-structuren. Mijn interesses liggen nu bij het puzzelen aan software voor nieuwe of bestaande projecten, om ze zelf netjes en sneller te ontwikkelen. Naast software heb ik een passie voor beeldende kunst.",
-		bioDetails: 
-			"<br> Nederlandse	nationaliteit<br> Rijbewijs AM-B <br> 1318LZ Almere <br> Mail voor tel. nummer",
-		languages:
-			"<h2>Talen</h2><p>Uitstekend <a onclick=changeLanguage('Nederlands')>Nederlands</a><br>Uitstekend <a onclick=changeLanguage('English')>Engels</a><br>Matig <a onclick=changeGreet('Kurdi')>Kurdisch</a><br></p>",
-		skills:
-			"<h2>Vaardigheden</h2><p> Qua implementatie heb ik een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas.	Ik benader software met <span class=\"highlight\">KISS</span>, <span class=\"highlight\">SOLID</span>, <span class=\"highlight\">TDD</span> en goed overwogen <span class=\"highlight\">design patterns</span>.	Voor modelleren werk ik in het algemeen met een <span class=\"highlight\">ER-model</span>.	Geen van deze principes is het best, ik denk dat elk project een eigen unieke combinatie van architecturele benaderingen nodig heeft.	<br>	<br>	Ik heb uitstekende beheersing van <span class=\"highlight\">.NET</span> en programeer van jongs af aan veel in <span class=\"highlight\">C#</span>.	In volgorde van ervaring kan ik ook werken met: <span class=\"highlight\">Python</span>, <span class=\"highlight\">Java</span>, <span class=\"highlight\">C++</span>, <span class=\"highlight\">Javascript</span>, <span class=\"highlight\">Haskell</span> en <span class=\"highlight\">C</span>. <br>	<br>	Verder kan ik overweg met <span class=\"highlight\">Linux</span>, <span class=\"highlight\">SQL</span>, <span class=\"highlight\">HTML+CSS</span>, <span class=\"highlight\">Shell-talen</span>, <span class=\"highlight\">AI-copilot</span>, <span class=\"highlight\">Git</span> en <span class=\"highlight\">Azure-devops</span>. Ik sta open om andere technologien snel op te pakken. High performance code en low-level running time optimalisaties ben ik bekend mee. <br> <br> Hoewel ik vaak de voorkeur heb om problemen zelf aan te pakken, is software maken vaak een team-effort. In zulke omstandigheden probeer ik een team-player te zijn door altijd klaar te staan om te helpen of samen te werken als mijn team dat nodig heeft. Agile werken met <span class=\"highlight\">Scrum</span> heb ik ervaring mee.	<br> <br>	Ik heb tijdens mijn studie een specialisatie opgebouwd voor het oplossen van complexe wiskundige problemen. Van het concreet modelleren van een probleem tot en met het zelfstandig implementeren en uitvoeren van exacte of heuristische <span class=\"highlight\">algoritmen</span> met geoptimaliseerde <span class=\"highlight\">data-structuren</span>  om te eindigen met een praktische oplossing.	<br> <br>	Naast software houd ik me veel bezig met beeldende kunst. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. Verder kan ik goed overweg met <span class=\"highlight\">Photoshop</span>, <span class=\"highlight\">Blender</span> en <span class=\"highlight\">Unity3D</span>. <br> </p>",
-		workExperience:
-			"<h2>Werkervaring</h2> <p> <strong class=Company>Metrohm Autolab</strong>	<br> Software Engineer <br> Part-time (0,6 FTE) <i>2021-2023</i>				<ul>					<li>Mocking, fixtures en code-coverage van back-end unit-tests sterk verbeterd</li>					<li>Stabiliteit en profiling onderzoek van device throughput uitgevoerd</li>					<li>De bestaande API uitgebreid met verschillende services</li>					<li>Gedeeld technisch leiderschap genomen van back-end</li>					<li>Meegeholpen met design, PoC en implementatie van een multi-threaded data-processing systeem</li>					<li>Talloze bugfixes in back-end, soms front-end en embedded-software</li>					<li>Business-model migratie uitgevoerd van <span class=\"highlight\">LiteDB</span> naar <span class=\"highlight\">RavenDB</span></li>					<li>Back-end developer workflow gedeeltelijk geautomatiseerd met <span class=\"highlight\">Powershell</span> en <span class=\"highlight\">CI</span> pipeline</li>				</ul>  				<br> <strong class=Company>Atelier STOK</strong>				<br> Organisator portet avond				<br> Vrijwillig part-time <i>2020-2022</i>				<br>				<br> <strong class=Company>Taal doet meer</strong>				<br> Taalmentor achterstandskind				<br> Vrijwillig part-time <i>2021-2022</i>				<br>				<br> <strong class=Company>Hotel van der Valk</strong>				<br> Banqueting en bediening medewerker				<br> Part-time <i>2021</i>				<br>				<br> <strong class=Company>Just Eat Takeaway.com</strong>				<br> Remote delivery courier				<br> Part-time <i>2021</i>				<br>			</p>",
-		education:
-			"<h2>Opleiding</h2>			<p> <strong>Master of Science in Computing Science</strong><br> Universiteit Utrecht <i>(2018-2021)</i><br> Cum laude behaald				<br><br> <strong>Bachelor of Science in Informatica</strong><br> Universiteit Utrecht <i>(2014-2018)</i><br> Cum laude behaald			<br><br> <strong>Gymnasium (NT + NG)</strong>	<br> Baken trinitas gymnasium <i>(2008-2014)</i><br> Cum laude behaald<br> </p>",
-		interests:
-			"<h2>Interesses</h2><p> Binnen de software zit ik me nu te verdiepen in het beter omgaan met AI en het integreren ervan in mijn workflow.	Ik probeer mezelf ook te richten op het kunnen ontwerpen van architectuur voor grotere systemen. <br> <br>		Naast software heb ik een interesse in film, games, tekenen, literatuur, fitness, geschiedenis, biologie, psychologie en filosofie.<br> </p>",
-	},
-};
+			  squares.forEach(square => square.adjust(scrollProgress));
+			  requestAnimationFrame(animate);
+			}
 
-function FillLanguage(language) {
-	changeGreet(language);
-	
-	var langTranslations = translations[language];
+			document.addEventListener('wheel', function(event) {
+			  targetProgress += event.deltaY * 0.00015;
+			  targetProgress = (targetProgress % 1 + 1) % 1;
+			}, { passive: false });
 
-  for (const key in langTranslations) {
-    const element = document.getElementById(key);
+			animate();
 
-    if (element) {
-      element.innerHTML = langTranslations[key];
-    }
-  }
-}
-
-function changeLanguage(language) {
-	var url = new URL(window.location.href)
-	url.searchParams.set('lang', language);
-	window.location.href = url;
-}
-
-function startPage() {
-	var url = new URL(window.location.href)
-	var lang = url.searchParams.get('lang');
-
-	if (lang) {
-		FillLanguage(lang)
-	}
-	else {
-		var language = "Nederlands"
-		changeLanguage(language)	
-	}
-}
-
-startPage();
-
-</script>
+		</script>
+    </body>
 
 </html>
