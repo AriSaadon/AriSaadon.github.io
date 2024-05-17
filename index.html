@@ -135,7 +135,7 @@
                 this.element.style.top = `${y}px`;
                 this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
                 this.element.style.backgroundColor = backgroundColor;
-				this.element.style.fontSize = `${window.innerHeight * 0.01}px`;
+				this.element.style.fontSize = `${Math.min(height * 0.2, 40)}px`;
 
                 this.updateContent(visibleTag);
             }
@@ -199,7 +199,7 @@
                 { progress: 1.0, x: 0.5, y: 0.90, width: 1, height: 0.05, border: 0, backgroundColor: '#FFA500', visibleTag: 'first' },
             ]),
             new Square('squareD', 0.6, [
-                { progress: 0.4, x: 0.5, y: 0.95, width: 1, height: 0.06, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
+                { progress: 0.4, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
                 { progress: 0.6, x: 0.5, y: 0.34, width: 1, height: 0.66, border: 0, backgroundColor: '#0000FF', visibleTag: 'second' },
                 { progress: 0.8, x: 0.5, y: 0.34, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
                 { progress: 1.0, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
