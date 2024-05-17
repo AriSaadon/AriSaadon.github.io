@@ -18,8 +18,7 @@
             transform: translate(-50%, 0);
             overflow: hidden; /* Ensure content overflows are hidden */
 
-            padding-left: 1.5%;
-			font-size: 1.5vh;
+            padding-left: 1.5vw;
         }
 
         .hidden {
@@ -136,6 +135,7 @@
                 this.element.style.top = `${y}px`;
                 this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
                 this.element.style.backgroundColor = backgroundColor;
+				this.element.style.fontSize = `${window.innerHeight * 0.01}px`;
 
                 this.updateContent(visibleTag);
             }
