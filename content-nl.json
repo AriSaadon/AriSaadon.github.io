@@ -1,8 +1,14 @@
 {
     "squareA": {
         "first": {
-            "title": "Titel A",
-            "text": "Tekst voor vierkant A in eerste sleutelbeeld"
+			"location": "Titel A",
+            "location": "Almere stad <br> 21:14 GMT+1",
+            "contact": "Email <br> Phone",
+            "firstname": "Ari.",
+			"lastname": "Saadon",            
+            "about": "Analytisch georiënteerde software engineer gespecialiseerd in algoritmen en multimedia technologie.",
+            "details": "11-09-1996 <br> Nederlandse <br> Rijbewijs AM-B <br> 1318 LZ Almere",
+            "languages": "Nederlands uitstekend <br> Engels uitstekend <br> Kurdish matig"
         },
         "second": {
             "title": "Titel A",
