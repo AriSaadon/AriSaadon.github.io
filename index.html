@@ -28,14 +28,59 @@
             left: 50%;
             transform: translate(-50%, -50%);
             
-			max-width: 1000px;
+			max-width: 930px;
             width: 100%;
             height: 100%;	
 			
-			padding-left: 3%;
-			padding-right: 3%;
-        }
+			color: #CCCCCC;
+			
+            text-wrap: balance;
+		  }
+		  
+		  .flex-container {
+			display: flex;
+			justify-content: space-between;
+		  }
+		  
+		  .block {
+			margin-left: 1vw;
+			margin-right: 1vw;	
+		  }
 
+		  h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 15vh;
+			font-weight: 400;
+			color: #E14B3C;
+			padding: 0px;
+			margin: 0px;
+			margin-top: 5vh;
+			line-height: 11vh;
+		  }
+
+		  h2 {
+			font-family: 'Raleway';
+			font-size: 7vh;
+			font-weight: 100;
+			padding: 0px;
+			margin: 0px;
+			line-height: 10vh;
+		  }
+
+		  p {
+			font-family: 'Raleway', sans-serif;
+			font-size: 2vh;
+			font-weight: 300;
+			line-height: 2.25vh;
+			margin-top: 1.5vh;
+			margin-bottom: 1.5vh;
+		  }
+		  
+		#wavingLineCanvas {
+			width: 100%;
+			height: 22vh
+		}
+ 
         .hidden {
             display: none;
         }
@@ -47,12 +92,45 @@
 </head>
 
 <body>
+
     <div id="squareA" class="square" data-square="squareA">
         <div class="content">
+		
+		
             <div data-tag="first">
-                <h1 data-i18n="title"></h1>
-                <p data-i18n="text"></p>
-            </div>
+			
+                <div class="flex-container">
+					<div class="block">
+						<p data-i18n="location"></p>
+					</div>
+					
+					<div class="right-align block">
+						<p data-i18n="contact"></p>
+					</div>
+			  </div>
+				   
+			<div class="block">
+				<h1 data-i18n="firstname"></h1>
+			</div>
+			<div class="block">
+				<h2 data-i18n="lastname"></h2>
+			</div>
+			<div class="block">
+				<p id="about" data-i18n="about"></p>
+			</div>
+			<div class="block">
+				<canvas id="wavingLineCanvas"></canvas>
+			</div>
+			<div class="block">
+				<p data-i18n="details"></p>
+			</div>
+			<div class="block">
+				<p data-i18n="languages"></p>
+			</div>
+		</div>
+			
+			
+			
             <div data-tag="second" class="hidden">
                 <h1 data-i18n="title"></h1>
                 <p data-i18n="text"></p>
@@ -97,6 +175,7 @@
     </div>
     <script src="Square.js"></script>
     <script src="Language.js"></script>
+	<script src="Wave.js"></script>
 
     <script>
         let scrollProgress = 0.0;
@@ -108,7 +187,7 @@
             if (delta > 0.5) delta -= 1;
             if (delta < -0.5) delta += 1;
 
-            scrollProgress += delta * 0.05;
+            scrollProgress += delta * 0.1;
             scrollProgress = (scrollProgress % 1 + 1) % 1;
 
             squares.forEach(square => square.adjust(scrollProgress));
@@ -139,10 +218,10 @@
 
         const squares = [
             new Square('squareA', 0.0, [
-                { progress: 0.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
-                { progress: 0.2, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
-                { progress: 0.8, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FF00', visibleTag: 'second' },
-                { progress: 1.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
+                { progress: 0.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'first' },
+                { progress: 0.2, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#1A1A1A', visibleTag: 'second' },
+                { progress: 0.8, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#1C1C1C', visibleTag: 'second' },
+                { progress: 1.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'first' },
             ]),
             new Square('squareB', 0.2, [
                 { progress: 0.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0, backgroundColor: '#FF0000', visibleTag: 'first' },
@@ -168,7 +247,7 @@
 
         animate();
 
-        updateContent('en');
+        updateContent('nl');
     </script>
 </body>
 
