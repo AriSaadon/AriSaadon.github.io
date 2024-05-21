@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('wavingLineCanvas');
   const ctx = canvas.getContext('2d');
   
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+  canvas.width = canvas.offsetWidth * 1.2;
+  canvas.height = canvas.offsetHeight * 1.2;
 
   // First set of wave parameters
   const waves = [{
