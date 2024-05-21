@@ -15,12 +15,18 @@ async function loadJSON(url) {
 async function updateContent(language) {
 	const content = await loadJSON(`content-${language}.json`);
 	if (content) {
-		document.querySelectorAll('.square').forEach(square => {
-			const squareId = square.getAttribute('data-square');
-			square.querySelectorAll('[data-i18n]').forEach(element => {
-				const tag = element.closest('div').getAttribute('data-tag');
+		document.querySelectorAll('[data-tag]').forEach(t => {
+			
+			const square = t.closest('.square');
+            const squareId = square.getAttribute('data-square');
+            const tag = t.getAttribute('data-tag');
+					
+			t.querySelectorAll('[data-i18n]').forEach(element => {
+				
 				const key = element.getAttribute('data-i18n');
-				element.innerHTML = content[squareId][tag][key];
+				const value = content[squareId][tag][key];
+								
+				element.innerHTML = value;
 			});
 		});
 	}
