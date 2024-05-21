@@ -14,11 +14,23 @@
 
         .square {
             position: absolute;
+			
             left: 50%;
             transform: translate(-50%, 0);
+			
             overflow: hidden; /* Ensure content overflows are hidden */
+        }
 
-            padding-left: 1.5vw;
+        .content {
+            position: absolute;
+			
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+			max-width: 1000px;
+            width: 100%;
+            height: 100%;		
         }
 
         .hidden {
@@ -33,179 +45,57 @@
 
 <body>
     <div id="squareA" class="square" data-square="squareA">
-        <div data-tag="first">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></p>
-        </div>
-        <div data-tag="second" class="hidden">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></p>
+        <div class="content">
+            <div data-tag="first">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></p>
+            </div>
+            <div data-tag="second" class="hidden">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></p>
+            </div>
         </div>
     </div>
     <div id="squareB" class="square" data-square="squareB">
-        <div data-tag="first">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></p>
-        </div>
-        <div data-tag="second" class="hidden">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></p>
+        <div class="content">
+            <div data-tag="first">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></p>
+            </div>
+            <div data-tag="second" class="hidden">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></p>
+            </div>
         </div>
     </div>
     <div id="squareC" class="square" data-square="squareC">
-        <div data-tag="first">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></h1>
-        </div>
-        <div data-tag="second" class="hidden">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></h1>
+        <div class="content">
+            <div data-tag="first">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
+            <div data-tag="second" class="hidden">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
         </div>
     </div>
     <div id="squareD" class="square" data-square="squareD">
-        <div data-tag="first">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></h1>
-        </div>
-        <div data-tag="second" class="hidden">
-            <h1 data-i18n="title"></h1>
-            <p data-i18n="text"></h1>
+        <div class="content">
+            <div data-tag="first">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
+            <div data-tag="second" class="hidden">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
         </div>
     </div>
+    <script src="Square.js"></script>
+    <script src="Language.js"></script>
+
     <script>
-		async function loadJSON(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return await response.json();
-    } catch (error) {
-        console.error(`Could not load JSON from ${url}:`, error);
-        return null;
-    }
-}
-
-
-        async function updateContent(language) {
-            const content = await loadJSON(`content-${language}.json`);
-            if (content) {
-                document.querySelectorAll('.square').forEach(square => {
-                    const squareId = square.getAttribute('data-square');
-                    square.querySelectorAll('[data-i18n]').forEach(element => {
-                        const tag = element.closest('div').getAttribute('data-tag');
-                        const key = element.getAttribute('data-i18n');
-                        element.innerHTML = content[squareId][tag][key];
-                    });
-                });
-            }
-        }
-
-        class Square {
-            constructor(elementId, targetProgress, keyframes) {
-                this.element = document.getElementById(elementId);
-                this.keyframes = keyframes;
-                this.targetProgress = targetProgress;
-                this.addClickListener();
-            }
-
-            addClickListener() {
-                this.element.addEventListener('click', () => {
-                    targetProgress = this.targetProgress;
-                });
-            }
-
-            adjust(scrollProgress) {
-                const lowerKeyframe = this.keyframes.slice().reverse().find(k => k.progress <= scrollProgress) || this.keyframes[0];
-                const upperKeyframe = this.keyframes.find(k => k.progress >= scrollProgress) || lowerKeyframe;
-
-                const range = upperKeyframe.progress - lowerKeyframe.progress;
-                const localProgress = range !== 0 ? (scrollProgress - lowerKeyframe.progress) / range : 0;
-
-                const width = Math.min(window.innerWidth, 1000) * this.lerp(lowerKeyframe.width, upperKeyframe.width, localProgress);
-                const height = window.innerHeight * this.lerp(lowerKeyframe.height, upperKeyframe.height, localProgress);
-                const x = window.innerWidth * this.lerp(lowerKeyframe.x, upperKeyframe.x, localProgress);
-                const y = window.innerHeight * this.lerp(lowerKeyframe.y, upperKeyframe.y, localProgress);
-                const backgroundColor = this.lerpColor(lowerKeyframe.backgroundColor, upperKeyframe.backgroundColor, localProgress);
-                const visibleTag = localProgress > 0.5 ? upperKeyframe.visibleTag : lowerKeyframe.visibleTag;
-
-                this.element.style.width = `${width}px`;
-                this.element.style.height = `${height}px`;
-                this.element.style.left = `${x}px`;
-                this.element.style.top = `${y}px`;
-                this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
-                this.element.style.backgroundColor = backgroundColor;
-				this.element.style.fontSize = `${Math.min(height * 0.2, 40)}px`;
-
-                this.updateContent(visibleTag);
-            }
-
-            updateContent(visibleTag) {
-                const children = this.element.children;
-                for (let i = 0; i < children.length; i++) {
-                    const child = children[i];
-                    if (child.getAttribute('data-tag') === visibleTag) {
-                        child.classList.remove('hidden');
-                        child.classList.add('visible');
-                    } else {
-                        child.classList.remove('visible');
-                        child.classList.add('hidden');
-                    }
-                }
-            }
-
-            lerp(start, end, t) {
-                t = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-                return start + (end - start) * t;
-            }
-
-            lerpColor(start, end, t) {
-                const startRGB = this.hexToRgb(start);
-                const endRGB = this.hexToRgb(end);
-                const r = Math.round(this.lerp(startRGB.r, endRGB.r, t));
-                const g = Math.round(this.lerp(startRGB.g, endRGB.g, t));
-                const b = Math.round(this.lerp(startRGB.b, endRGB.b, t));
-                return `rgb(${r}, ${g}, ${b})`;
-            }
-
-            hexToRgb(hex) {
-                const bigint = parseInt(hex.slice(1), 16);
-                const r = (bigint >> 16) & 255;
-                const g = (bigint >> 8) & 255;
-                const b = bigint & 255;
-                return { r, g, b };
-            }
-        }
-
-        const squares = [
-            new Square('squareA', 0.0, [
-                { progress: 0.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
-                { progress: 0.2, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
-                { progress: 0.8, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FF00', visibleTag: 'second' },
-                { progress: 1.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
-            ]),
-            new Square('squareB', 0.2, [
-                { progress: 0.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0, backgroundColor: '#FF0000', visibleTag: 'first' },
-                { progress: 0.2, x: 0.5, y: 0.12, width: 1, height: 0.78, border: 0, backgroundColor: '#00FF00', visibleTag: 'second' },
-                { progress: 0.4, x: 0.5, y: 0.12, width: 0.97, height: 0.1, border: 20, backgroundColor: '#0000FF', visibleTag: 'second' },
-                { progress: 0.8, x: 0.5, y: 0.12, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FFFF', visibleTag: 'second' },
-                { progress: 1.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0, backgroundColor: '#FF0000', visibleTag: 'first' },
-            ]),
-            new Square('squareC', 0.4, [
-                { progress: 0.2, x: 0.5, y: 0.90, width: 1, height: 0.05, border: 0, backgroundColor: '#FFA500', visibleTag: 'first' },
-                { progress: 0.4, x: 0.5, y: 0.23, width: 1, height: 0.72, border: 0, backgroundColor: '#00FF00', visibleTag: 'second' },
-                { progress: 0.6, x: 0.5, y: 0.23, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
-                { progress: 0.8, x: 0.5, y: 0.23, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FFFF', visibleTag: 'second' },
-                { progress: 1.0, x: 0.5, y: 0.90, width: 1, height: 0.05, border: 0, backgroundColor: '#FFA500', visibleTag: 'first' },
-            ]),
-            new Square('squareD', 0.6, [
-                { progress: 0.4, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
-                { progress: 0.6, x: 0.5, y: 0.34, width: 1, height: 0.66, border: 0, backgroundColor: '#0000FF', visibleTag: 'second' },
-                { progress: 0.8, x: 0.5, y: 0.34, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
-                { progress: 1.0, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
-            ])
-        ];
-
         let scrollProgress = 0.0;
         let targetProgress = 0.0;
 
@@ -236,17 +126,45 @@
         document.addEventListener('touchmove', function (event) {
             const touchEndY = event.touches[0].clientY;
             const deltaY = touchStartY - touchEndY;
-            targetProgress += deltaY * 0.00075; // Adjust the multiplier as needed for sensitivity
+            targetProgress += deltaY * 0.00075;
             targetProgress = (targetProgress % 1 + 1) % 1;
             touchStartY = touchEndY;
 
-            event.preventDefault();  // Prevent the default pull-to-refresh behavior
+            event.preventDefault();
 
         }, { passive: false });
 
+        const squares = [
+            new Square('squareA', 0.0, [
+                { progress: 0.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
+                { progress: 0.2, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
+                { progress: 0.8, x: 0.5, y: 0.01, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FF00', visibleTag: 'second' },
+                { progress: 1.0, x: 0.5, y: 0.00, width: 1, height: 0.85, border: 0, backgroundColor: '#0000FF', visibleTag: 'first' },
+            ]),
+            new Square('squareB', 0.2, [
+                { progress: 0.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0, backgroundColor: '#FF0000', visibleTag: 'first' },
+                { progress: 0.2, x: 0.5, y: 0.12, width: 1, height: 0.78, border: 0, backgroundColor: '#00FF00', visibleTag: 'second' },
+                { progress: 0.4, x: 0.5, y: 0.12, width: 0.97, height: 0.1, border: 20, backgroundColor: '#0000FF', visibleTag: 'second' },
+                { progress: 0.8, x: 0.5, y: 0.12, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FFFF', visibleTag: 'second' },
+                { progress: 1.0, x: 0.5, y: 0.85, width: 1, height: 0.05, border: 0, backgroundColor: '#FF0000', visibleTag: 'first' },
+            ]),
+            new Square('squareC', 0.4, [
+                { progress: 0.2, x: 0.5, y: 0.90, width: 1, height: 0.05, border: 0, backgroundColor: '#FFA500', visibleTag: 'first' },
+                { progress: 0.4, x: 0.5, y: 0.23, width: 1, height: 0.72, border: 0, backgroundColor: '#00FF00', visibleTag: 'second' },
+                { progress: 0.6, x: 0.5, y: 0.23, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
+                { progress: 0.8, x: 0.5, y: 0.23, width: 0.97, height: 0.1, border: 20, backgroundColor: '#00FFFF', visibleTag: 'second' },
+                { progress: 1.0, x: 0.5, y: 0.90, width: 1, height: 0.05, border: 0, backgroundColor: '#FFA500', visibleTag: 'first' },
+            ]),
+            new Square('squareD', 0.6, [
+                { progress: 0.4, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
+                { progress: 0.6, x: 0.5, y: 0.34, width: 1, height: 0.66, border: 0, backgroundColor: '#0000FF', visibleTag: 'second' },
+                { progress: 0.8, x: 0.5, y: 0.34, width: 0.97, height: 0.1, border: 20, backgroundColor: '#FF0000', visibleTag: 'second' },
+                { progress: 1.0, x: 0.5, y: 0.95, width: 1, height: 0.05, border: 0, backgroundColor: '#008000', visibleTag: 'first' },
+            ])
+        ];
+
         animate();
 
-        // Initial content load
         updateContent('en');
     </script>
 </body>
