@@ -76,8 +76,8 @@
 
 		  p {
 			font-family: 'Raleway', sans-serif;
-			font-size: 2vh;
 			font-weight: 300;
+			font-size: 1.9vh;
 			line-height: 2.4vh;
 			margin-top: 1.8vh;
 			margin-bottom: 2vh;
@@ -96,6 +96,21 @@
 
         .visible {
             display: block;
+        }
+
+        @media (max-width:960px) { 
+            p {
+                font-size: 1.9vh;
+			    line-height: 2.2vh;
+			    margin-top: 1.5vh;
+			    margin-bottom: 1.5vh;
+            }
+
+            #wavingLineCanvas {
+			height: 10vh;
+			margin-top: 1vh;
+            margin-bottom: 2vh;
+		}
         }
     </style>
 </head>
