@@ -1,0 +1,90 @@
+{
+    "squareA": {
+        "detail": {
+            "contact": "ari._s@hotmail.com <br> +31 6 385 040 57",
+            "firstname": "Ari.",
+			"lastname": "Saadon",            
+            "about": "Analytisch georiënteerde software engineer <br> gespecialiseerd in algoritmen en multimedia technologie.",
+            "details": "11-09-1996 <br> Nederlandse <br> Rijbewijs AM-B <br> 1318 LZ Almere",
+            "languages": "Nederlands uitstekend <br> Engels uitstekend <br> Kurdish matig"
+        },
+        "summary": {
+            "name": "Ari Saadon",
+            "contact": "ari._s@hotmail.com &#160 &#160 +316 385 040 57"
+        }
+    },
+
+
+
+    "squareB": {
+        "detail": {
+            "title": "Goeiemiddag",
+            "text": "ik ben een software engineer wonend in Almere. Middels mijn studie heb ik een specialisatie in algoritmen en data-structuren. Mijn interesses liggen nu bij het puzzelen aan software voor nieuwe of bestaande projecten, om ze zelf netjes en sneller te ontwikkelen. Naast software heb ik een passie voor beeldende kunst."
+        },
+        "summary": {
+            "text": "Software engineer gespecialiseerd in algoritmen en multimedia."
+        }
+    },
+
+
+
+    "squareC": {
+        "detail": {
+            "title": "Talen",
+            "text": "Uitstekend Nederlands <br> Uitstekend Engels <br> Matig Koerdisch"
+        },
+        "summary": {
+            "title": "Uitstekende beheersing van nederlands en engels."
+        }
+    },
+
+
+
+
+    "squareD": {
+        "detail": {
+            "title": "Vaardigheden",
+            "text": "Ik heb een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas. Ik benader software met KISS, SOLID, TDD en goed overwogen design patterns. Ik heb uitstekende beheersing van .NET. Ik kan goed overweg met Python, Java, C++, C, HTML, CSS, Javascript, Haskell, SQL, Shell-talen, Git, Linux, AI-copilot en Azure-devops. \n Ik heb tijdens mijn studie een specialisatie opgebouwd voor het oplossen van complexe wiskundige problemen met geoptimaliseerde data-structuren en algoritmen. Ik sta open om andere technieken en technologien snel op te pakken. Goed in teamverband communiceren en werken met scrum heb ik ervaring mee. Naast software houd ik me veel bezig met beeldende kunst. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. Ik kan goed overweg met Photoshop, Blender en Unity3D."
+        },
+        "summary": {
+            "title": "Sinds jongs af aan gedreven in fullstack technologien."
+        }
+    },
+
+
+
+    "squareE": {
+        "detail": {
+            "title": "Werkervaring",
+            "metrohm": "Metrohm Autolab <br> Software Engineer <br> Part-time 2021-2023",
+            "metrohm1": "Stabiliteit en profiling onderzoek van device throughput uitgevoerd",
+            "metrohm2": "De bestaande API uitgebreid met verschillende services",
+            "metrohm3": "Gedeeld technisch leiderschap genomen van back-end",
+            "metrohm4": "Design, PoC en implementatie van een multi-threaded data-processing systeem",
+            "metrohm5": "Bugfixes in back-end, front-end en embedded-software",
+            "metrohm6": "Business-model migratie uitgevoerd van LiteDB naar RavenDB",
+            "metrohm7": "Back-end developer workflow geautomatiseerd met Powershell en CI pipeline",
+            "metrohm8": "Mocking, fixtures en code-coverage van back-end unit-tests sterk verbeterd",
+            "stok": "Atelier STOK <br> Organisator portet avond <br> Vrijwillig part-time 2020-2022",
+            "language": "Taal doet meer <br> Taalmentor achterstandskind <br> Vrijwillig part-time 2021-2022",
+            "hotel": "Hotel van der Valk <br> Banqueting medewerker <br> Part-time 2021",
+            "deliver": "Just Eat Takeaway.com <br> delivery courier <br> Part-time 2020"
+        },
+        "summary": {
+            "title": "Meerdere jaren professioneel ervaring als software engineer."
+        }
+    },
+
+    
+    "squareF": {
+        "detail": {
+            "title": "Opleiding",
+            "master": "Master of Science in Computing Science <br> Universiteit Utrecht (2018-2021) <br> Cum laude behaald",
+            "bachelor": "Bachelor of Science in Informatica <br> Universiteit Utrecht (2014-2018) <br> Cum laude behaald",
+            "highschool": "Gymnasium (NT + NG) <br> Baken trinitas gymnasium (2008-2014) <br> Cum laude behaald"
+        },
+        "summary": {
+            "title": "Master diploma in informatica van de universiteit utrecht."
+        }
+    }
+}
