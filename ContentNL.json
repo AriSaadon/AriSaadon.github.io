@@ -1,0 +1,74 @@
+{
+    "squareA": {
+        "detail": {
+            "firstname": "Ari.",
+			"lastname": "Saadon",            
+            "contact": "ari._s@hotmail.com <br> +31 6 385 040 57",
+            "details": "11-09-1996 <br> Nederlandse <br> Rijbewijs AM-B <br> 1318 LZ Almere",
+            "languages": "Nederlands uitstekend <br> Engels uitstekend <br> Koerdisch matig"
+        }
+    },
+
+
+
+    "squareB": {
+        "detail": {
+            "title": "Goedendag",
+            "text": "Ik ben een software engineer momenteel wonend in Almere. Middels mijn studie heb ik een specialisatie in algoritmen en multimedia. Mijn interesses binnen software liggen bij het puzzelen aan architectuur voor nieuwe of bestaande projecten, om ze efficienter te ontwikkelen.<br><br> Naast software heb ik een passievoor beeldende kunst."
+        },
+        "summary": {
+            "text": "Software engineer gespecialiseerd in algoritmen en multimedia."
+        }
+    },
+
+    
+    "squareC": {
+        "detail": {
+            "title": "Opleiding",
+            "master": "Master of Science in Computing Science <br> Universiteit Utrecht (2018-2021) <br> Cum laude behaald",
+            "bachelor": "Bachelor of Science in Informatica <br> Universiteit Utrecht (2014-2018) <br> Cum laude behaald",
+            "highschool": "Gymnasium (NT + NG) <br> Baken trinitas gymnasium (2008-2014) <br> Cum laude behaald"
+        },
+        "summary": {
+            "title": "Master diploma in informatica aan de universiteit utrecht."
+        }
+    },
+
+
+    "squareD": {
+        "detail": {
+            "title": "Vaardigheden",
+            "text": "Ik heb een sterke beheersing van de object-georienteerd, functionele en procedurele paradigmas. Ik benader software met KISS, SOLID, TDD en design patterns.<br><br> Ik heb uitstekende beheersing van C# en .NET. Ik kan goed overweg met Python, Java, HTML, CSS, Javascript, SQL, Shell-talen, Git, Linux, AI-copilot en Azure-devops. Ik sta open en kan makkelijk andere technieken en technologien oppakken. Naast programmeren ben ik ook kundig op visueel vlak. Ik heb een basis in design, UX, tekenen, schilderen, 3d-modelleren en animeren. Ik kan uitstekend overweg met Photoshop, Blender en Unity3D. <br><br> Ik functioneer zowel individueel als binnen teams uitstekend. In mijn eentje implementeer ik projecten en features structureel en snel. Ik heb professionele ervaring en ben goed bekend met scrum en teamwerken. Ik heb oog voor mijn teamleden, kan uitstekend proactief bijdragen aan alle teamzaken en kan mijn inzichten verwoorden aan alle betrokkenen."
+        },
+        "summary": {
+            "title": "Sterke beheersing van fullstack software developen."
+        }
+    },
+
+
+
+    "squareE": {
+        "detail": {
+            "title": "Werkervaring",
+            
+            "metrohm": "Metrohm Autolab <br> Software Engineer <br> Part-time 2021-2023",
+            "metrohm2": "Gedeeld technisch leiderschap genomen van back-end",
+            "metrohm3": "Bugfixes en uitbreidingen van fullstack",
+            "metrohm4": "Design, PoC en implementatie van multi-threaded data systeem",
+            "metrohm5": "Business-model migratie uitgevoerd van LiteDB naar RavenDB",
+            "metrohm6": "Back-end tests en workflow verbeterd en geautomatiseerd",            
+            
+            "stok": "Atelier STOK <br> Organisator portet avond <br> Vrijwillig part-time 2020-2022",
+            
+            "language": "Taal doet meer <br> Taalmentor achterstandskind <br> Vrijwillig part-time 2021-2022",
+            
+            "hotel": "Hotel van der Valk <br> Banqueting medewerker <br> Part-time 2021",
+            
+            "deliver": "Just Eat Takeaway.com <br> delivery courier <br> Part-time 2020"
+        },
+        "summary": {
+            "title": "Meerdere jaren ervaring als software engineer binnen een team."
+        }
+    }
+
+}

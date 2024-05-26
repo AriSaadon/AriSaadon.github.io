@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Squares</title>
+    <link rel="stylesheet" href="StyleIndex.css"/>
+</head>
+
+<body>
+
+    <div id="squareA" class="square" data-square="squareA">
+        <div class="content">
+
+            <div id="A1" data-tag="detail">
+                <h1 data-i18n="firstname"></h1>
+                <h2 data-i18n="lastname"></h2>
+                <p data-i18n="contact"></p>
+                <p data-i18n="details"></p>
+                <p data-i18n="languages"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="squareB" class="square" data-square="squareB">
+        <div class="content">
+
+            <div data-tag="detail">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
+
+            <div data-tag="summary">
+                <li data-i18n="text"></li>
+            </div>
+        </div>
+    </div>
+
+    <div id="squareC" class="square" data-square="squareC">
+        <div class="content">
+
+            <div data-tag="detail">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="master"></p>
+                <p data-i18n="bachelor"></p>
+                <p data-i18n="highschool"></p>
+            </div>
+
+            <div data-tag="summary">
+                <li data-i18n="title"></li>
+            </div>
+        </div>
+    </div>
+
+    <div id="squareD" class="square" data-square="squareD">
+        <div class="content">
+
+            <div data-tag="detail">
+                <h1 data-i18n="title"></h1>
+                <p data-i18n="text"></h1>
+            </div>
+
+            <div data-tag="summary">
+                <li data-i18n="title"></li>
+            </div>
+        </div>
+    </div>
+
+    <div id="squareE" class="square" data-square="squareE">
+        <div class="content">
+
+            <div id="work" data-tag="detail">
+                <h1 data-i18n="title"></h1>
+                <div style="display:flex; flex-direction: row;">
+                    <p data-i18n="metrohm"></p>
+                    <ul>
+                        <li data-i18n="metrohm2"></li>
+                        <li data-i18n="metrohm3"></li>
+                        <li data-i18n="metrohm4"></li>
+                        <li data-i18n="metrohm5"></li>
+                        <li data-i18n="metrohm6"></li>
+                    </ul>
+                </div>
+                <p data-i18n="stok"></p>
+                <p data-i18n="language"></p>
+            </div>
+
+            <div data-tag="summary">
+                <li data-i18n="title"></li>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="CodeSquare.js"></script>
+    <script src="CodeLanguage.js"></script>
+
+    <script>
+        let scrollProgress = 0.0;
+        let targetProgress = 0.0;
+
+        function animate() {
+            let delta = targetProgress - scrollProgress;
+
+            if (delta > 0.5) delta -= 1;
+            if (delta < -0.5) delta += 1;
+
+            scrollProgress += delta * 0.1;
+            scrollProgress = (scrollProgress % 1 + 1) % 1;
+
+            squares.forEach(square => square.adjust(scrollProgress));
+            requestAnimationFrame(animate);
+        }
+
+        document.addEventListener('wheel', function (event) {
+            targetProgress += event.deltaY * 0.00015;
+            targetProgress = (targetProgress % 1 + 1) % 1;
+        }, { passive: false });
+
+        let touchStartY = 0;
+
+        document.addEventListener('touchstart', function (event) {
+            touchStartY = event.touches[0].clientY;
+        }, { passive: false });
+
+        document.addEventListener('touchmove', function (event) {
+            const touchEndY = event.touches[0].clientY;
+            const deltaY = touchStartY - touchEndY;
+            targetProgress += deltaY * 0.00075;
+            targetProgress = (targetProgress % 1 + 1) % 1;
+            touchStartY = touchEndY;
+
+            event.preventDefault();
+
+        }, { passive: false });
+
+        const squares = [
+            new Square('squareA', 0.0, [
+                { progress: 0.0, x: 0.325, y: 0.15, width: 0.15, height: 0.5, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+                { progress: 1.0, x: 0.325, y: 0.15, width: 0.15, height: 0.5, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+            ]),
+            new Square('squareB', 0.16, [
+                { progress: 0.0, x: 0.6, y: 0.2, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.16, x: 0.6, y: 0.15, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+                { progress: 0.33, x: 0.6, y: 0.125, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.83, x: 0.6, y: 0.125, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 1.0, x: 0.6, y: 0.2, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+            ]),
+            new Square('squareC', 0.33, [
+                { progress: 0.0, x: 0.6, y: 0.325, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.16, x: 0.6, y: 0.6, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.33, x: 0.6, y: 0.25, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+                { progress: 0.5, x: 0.6, y: 0.2, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.83, x: 0.6, y: 0.2, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 1.0, x: 0.6, y: 0.325, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+
+            ]),
+            new Square('squareD', 0.5, [
+                { progress: 0.0, x: 0.6, y: 0.45, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.16, x: 0.6, y: 0.675, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.33, x: 0.6, y: 0.725, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.5, x: 0.6, y: 0.3, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+                { progress: 0.66, x: 0.6, y: 0.275, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.83, x: 0.6, y: 0.275, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 1.0, x: 0.6, y: 0.45, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+            ]),
+            new Square('squareE', 0.66, [
+                { progress: 0.0, x: 0.6, y: 0.575, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.16, x: 0.6, y: 0.75, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.33, x: 0.6, y: 0.8, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.5, x: 0.6, y: 0.8, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 0.66, x: 0.6, y: 0.4, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'detail' },
+                { progress: 0.83, x: 0.6, y: 0.35, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+                { progress: 1.0, x: 0.6, y: 0.575, width: 0.5, height: 0.05, border: 0, backgroundColor: '#1F1F1F', visibleTag: 'summary' },
+            ]),
+        ];
+
+        animate();
+
+        updateContent('NL');
+    </script>
+</body>
+
+</html>
