@@ -99,6 +99,7 @@ li {
 
 li:hover {
   color: #c3483d;
+  cursor: pointer;
 }
 
 ul {
