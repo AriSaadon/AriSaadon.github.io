@@ -3,7 +3,7 @@
         "detail": {
             "firstname": "Ari.",
             "lastname": "Saadon",
-            "contact": "<a href='mailto:ari._s@hotmail.com'>ari._s@hotmail.com</a> <br> <a href='tel:+31638504057'>+31 6 385 040 57</a> ",
+            "contact": "<a href='mailto:ari._s@hotmail.com'>ari._s@hotmail.com</a> <br> <a href='tel:+31638504057'>+31 6 385 040 57</a>",
             "details": "11-09-1996 <br> Dutch nationality<br> Driver license AM-B <br> 1318 LZ Almere",
             "languages": "Excellent <a onclick=updateContent('NL')>Dutch</a> <br> Excellent <a onclick=updateContent('EN')>English</a> <br> Somewhat Kurdish"
         }
