@@ -87,6 +87,7 @@ li {
   font-size: 1.1vw;
   font-weight: 300;
   line-height: 1.5vw;
+  letter-spacing: 0.03vw;
 
   list-style-type: circle;
   
@@ -115,6 +116,7 @@ p {
 #squareA p {
   font-size: 0.95vw;
   line-height: 1.3vw;
+  
   color: #b5b5b5;
 }
 
