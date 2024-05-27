@@ -52,6 +52,7 @@ body {
   font-size: 5.4vw;
   line-height: 3.9vw;
   color: #E14B3C;
+  margin: 0;
 }
 h1 {
   font-family: 'Playfair Display', serif;
@@ -62,7 +63,7 @@ h1 {
   color: #c3483d;
   
   padding: 0px;
-  margin: 0 0 0 0;
+  margin: 0 0 3% 0;
 }
 
 h2 {
@@ -109,7 +110,7 @@ p {
   font-weight: 300;
   font-size: 0.85vw;
   
-  line-height: 1.1vw;
+  line-height: 1.15vw;
   
   margin: 1vw 2% 1.25vw 2%;
 }
