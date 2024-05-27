@@ -34,7 +34,7 @@
     "squareD": {
         "detail": {
             "title": "Vaardigheden",
-            "text": "Ik heb een sterke beheersing van de object-georiënteerde, functionele en procedurele paradigma's. Ik benader software met KISS, SOLID, TDD en design patterns.<br><br> Ik heb uitstekende beheersing van C# en .NET. Ik kan goed overweg met Python, Java, HTML, CSS, Javascript, SQL, shell-talen, Git, Linux, AI-copilot en Azure DevOps. Ik sta open en kan makkelijk andere technieken en technologieën oppakken. Naast programmeren ben ik ook kundig op visueel vlak. Ik heb een basis in design, UX, tekenen, schilderen, 3D-modelleren en animeren. Ik kan uitstekend overweg met Photoshop, Blender en Unity3D. <br><br> Ik functioneer zowel individueel als binnen teams uitstekend. In mijn eentje implementeer ik projecten en features structureel en snel. Ik heb professionele ervaring en ben goed bekend met scrum en teamwerken. Ik heb oog voor mijn teamleden, kan uitstekend proactief bijdragen aan alle teamzaken en kan mijn inzichten verwoorden aan alle betrokkenen."
+            "text": "Ik heb een sterke beheersing van de object-georiënteerde, functionele en procedurele paradigma's. Ik benader software met <span>KISS</span>, <span>SOLID</span>, <span>TDD</span> en <span>design patterns</span>.<br><br> Ik heb uitstekende beheersing van <span>C#</span> en <span>.NET</span>. Ik kan goed overweg met <span>Python</span>, <span>Java</span>, <span>HTML</span>, <span>CSS</span>, <span>Javascript</span>, <span>SQL</span>, <span>shell-talen</span>, <span>Git</span>, <span>Linux</span>, <span>AI-copilot</span> en <span>Azure DevOps</span>. Ik sta open en kan makkelijk andere technieken en technologieën oppakken. Naast programmeren ben ik ook kundig op visueel vlak. Ik heb een basis in <span>UI</span>, <span>UX</span>, <span>3D-modelleren</span> en <span>animeren</span>. Ik kan uitstekend overweg met <span>Photoshop</span>, <span>Blender</span> en <span>Unity3D</span>. <br><br> Ik functioneer zowel individueel als binnen teams uitstekend. In mijn eentje implementeer ik projecten en features structureel en snel. Ik heb professionele ervaring en ben goed bekend met <span>scrum</span> en teamwerken. Ik heb oog voor mijn teamleden, kan uitstekend proactief bijdragen aan alle teamzaken en kan mijn inzichten verwoorden aan alle betrokkenen."
         },
         "summary": {
             "title": "Sterke beheersing van fullstack software development."
@@ -49,7 +49,7 @@
             "metrohm2": "Gedeeld technisch leiderschap genomen van back-end",
             "metrohm3": "Bugfixes en uitbreidingen van fullstack",
             "metrohm4": "Design, PoC en implementatie van multi-threaded datasysteem",
-            "metrohm5": "Businessmodelmigratie uitgevoerd van LiteDB naar RavenDB",
+            "metrohm5": "Businessmodelmigratie uitgevoerd van <span>LiteDB</span> naar <span>RavenDB</span>",
             "metrohm6": "Back-end tests en workflow verbeterd en geautomatiseerd",            
             
             "stok": "Atelier STOK <br> Organisator portretavond <br> Vrijwillig parttime 2020-2022",

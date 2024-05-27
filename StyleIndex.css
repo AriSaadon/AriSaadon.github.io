@@ -76,6 +76,15 @@ h2 {
   margin: 0 0 0 0;
 }
 
+span {
+  color: #c05454;
+  font-weight: 200;
+  background-color: rgba(201, 68, 58, 0.1);
+  padding: 0 0.2vw;
+  border-radius: 0.2vw;
+  display: inline;
+}
+
 #work li {
   font-size: 0.8vw;
 }
@@ -122,7 +131,7 @@ p {
   
   line-height: 1.15vw;
   
-  margin: 0 2% 1.25vw 2%;
+  margin: 0 0 1.25vw 2%;
 }
 
 #squareA p {
