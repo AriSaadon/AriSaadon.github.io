@@ -4,14 +4,14 @@
             "firstname": "Ari.",
             "lastname": "Saadon",
             "contact": "<a href='mailto:ari._s@hotmail.com'>ari._s@hotmail.com</a> <br> <a href='tel:+31638504057'>+31 6 385 040 57</a>",
-            "details": "11-09-1996 <br> Dutch nationality<br> Driver license AM-B <br> 1318 LZ Almere",
+            "details": "11-09-1996 <br> Dutch <br> Driver license AM-B <br> 1318 LZ Almere",
             "languages": "Excellent <a onclick=updateContent('NL')>Dutch</a> <br> Excellent <a onclick=updateContent('EN')>English</a> <br> Somewhat Kurdish"
         }
     },
 
     "squareB": {
         "detail": {
-            "title": "Goodday",
+            "title": "Good day",
             "text": "I am a software engineer currently living in Almere. Through my studies, I have specialized in algorithms and multimedia. My interests within software lie in puzzling over architecture for new or existing projects to develop them more efficiently.<br><br> Besides software, I have a passion for visual arts."
         },
         "summary": {
@@ -34,7 +34,7 @@
     "squareD": {
         "detail": {
             "title": "Skills",
-            "text": "I have a strong command of the object-oriented, functional, and procedural paradigms. I approach software with KISS, SOLID, TDD, and design patterns.<br><br> I have excellent command of C# and .NET. I am proficient with Python, Java, HTML, CSS, Javascript, SQL, shell languages, Git, Linux, AI copilot, and Azure DevOps. I am open to and can easily pick up other techniques and technologies. Besides programming, I am also skilled in the visual field. I have a foundation in design, UX, drawing, painting, 3D modeling, and animation. I am proficient with Photoshop, Blender, and Unity3D. <br><br> I function excellently both individually and within teams. On my own, I implement projects and features structurally and quickly. I have professional experience and am well-versed in scrum and teamwork. I am attentive to my team members, can contribute proactively to all team matters, and can articulate my insights to all involved."
+            "text": "I have a strong command of the object-oriented, functional, and procedural paradigms. I approach software with <span>KISS</span>, <span>SOLID</span>, <span>TDD</span>, and <span>design patterns</span>.<br><br> I have excellent command of <span>C#</span> and <span>.NET</span>. I am proficient with <span>Python</span>, <span>Java</span>, <span>HTML</span>, <span>CSS</span>, <span>Javascript</span>, <span>SQL</span>, <span>shell languages</span>, <span>Git</span>, <span>Linux</span>, <span>AI copilot</span>, and <span>Azure DevOps</span>. I am open to and can easily pick up other techniques and technologies. Besides programming, I am also skilled in the visual field. I have a foundation in <span>UI</span>, <span>UX</span>, <span>3D modeling</span>, and <span>animation</span>. I am proficient with <span>Photoshop</span>, <span>Blender</span>, and <span>Unity3D</span>. <br><br> I function excellently both individually and within teams. On my own, I implement projects and features structurally and quickly. I have professional experience and am well-versed in <span>scrum</span> and teamwork. I am attentive to my team members, can contribute proactively to all team matters, and can articulate my insights to all involved."
         },
         "summary": {
             "title": "Strong command of full-stack software development."
@@ -49,7 +49,7 @@
             "metrohm2": "Shared technical leadership of the back-end",
             "metrohm3": "Bug fixes and full-stack extensions",
             "metrohm4": "Design, PoC, and implementation of a multi-threaded data system",
-            "metrohm5": "Business model migration from LiteDB to RavenDB",
+            "metrohm5": "Business model migration from <span>LiteDB</span> to <span>RavenDB</span>",
             "metrohm6": "Improved and automated back-end tests and workflow",            
             
             "stok": "Atelier STOK <br> Organizer portrait evening <br> Volunteer part-time 2020-2022",
