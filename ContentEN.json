@@ -1,42 +1,63 @@
 {
     "squareA": {
-        "first": {
-            "title": "Title A",
-            "text": "Text for Square A in first keyframe"
-        },
-        "second": {
-            "title": "Title A",
-            "text": "Text for Square A in other keyframes"
+        "detail": {
+            "firstname": "Ari.",
+            "lastname": "Saadon",
+            "contact": "ari._s@hotmail.com <br> +31 6 385 040 57",
+            "details": "11-09-1996 <br> Dutch nationality<br> Driver license AM-B <br> 1318 LZ Almere",
+            "languages": "Excellent Dutch <br> Excellent English <br> Somewhat Kurdish"
         }
     },
+
     "squareB": {
-        "first": {
-            "title": "Title B",
-            "text": "Text for Square B"
+        "detail": {
+            "title": "Goodday",
+            "text": "I am a software engineer currently living in Almere. Through my studies, I have specialized in algorithms and multimedia. My interests within software lie in puzzling over architecture for new or existing projects to develop them more efficiently.<br><br> Besides software, I have a passion for visual arts."
         },
-        "second": {
-            "title": "Title B",
-            "text": "Text for Square B in other keyframes"
+        "summary": {
+            "text": "Software engineer specialized in algorithms and multimedia."
         }
     },
+
     "squareC": {
-        "first": {
-            "title": "Title C",
-            "text": "Text for Square C"
+        "detail": {
+            "title": "Education",
+            "master": "Master of Science in Computing Science <br> University of Utrecht (2018-2021) <br> Graduated cum laude",
+            "bachelor": "Bachelor of Science in Computer Science <br> University of Utrecht (2014-2018) <br> Graduated cum laude",
+            "highschool": "Gymnasium (NT + NG) <br> Baken Trinitas Gymnasium (2008-2014) <br> Graduated cum laude"
         },
-        "second": {
-            "title": "Title C",
-            "text": "Text for Square C in other keyframes"
+        "summary": {
+            "title": "Master's degree in Computer Science from the University of Utrecht."
         }
     },
+
     "squareD": {
-        "first": {
-            "title": "Title D",
-            "text": "Text for Square D"
+        "detail": {
+            "title": "Skills",
+            "text": "I have a strong command of the object-oriented, functional, and procedural paradigms. I approach software with KISS, SOLID, TDD, and design patterns.<br><br> I have excellent command of C# and .NET. I am proficient with Python, Java, HTML, CSS, Javascript, SQL, shell languages, Git, Linux, AI copilot, and Azure DevOps. I am open to and can easily pick up other techniques and technologies. Besides programming, I am also skilled in the visual field. I have a foundation in design, UX, drawing, painting, 3D modeling, and animation. I am proficient with Photoshop, Blender, and Unity3D. <br><br> I function excellently both individually and within teams. On my own, I implement projects and features structurally and quickly. I have professional experience and am well-versed in scrum and teamwork. I am attentive to my team members, can contribute proactively to all team matters, and can articulate my insights to all involved."
         },
-        "second": {
-            "title": "Title D",
-            "text": "Text for Square D in other keyframes"
+        "summary": {
+            "title": "Strong command of full-stack software development."
+        }
+    },
+
+    "squareE": {
+        "detail": {
+            "title": "Work Experience",
+            
+            "metrohm": "Metrohm Autolab <br> Software Engineer <br> Part-time 2021-2023",
+            "metrohm2": "Shared technical leadership of the back-end",
+            "metrohm3": "Bug fixes and full-stack extensions",
+            "metrohm4": "Design, PoC, and implementation of a multi-threaded data system",
+            "metrohm5": "Business model migration from LiteDB to RavenDB",
+            "metrohm6": "Improved and automated back-end tests and workflow",            
+            
+            "stok": "Atelier STOK <br> Organizer portrait evening <br> Volunteer part-time 2020-2022",
+            
+            "language": "Taal doet meer <br> Language mentor for disadvantaged children <br> Volunteer part-time 2021-2022"
+        },
+        "summary": {
+            "title": "Several years of experience as a software engineer within a team."
         }
     }
 }
