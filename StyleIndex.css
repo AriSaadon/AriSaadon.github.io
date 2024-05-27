@@ -105,6 +105,15 @@ ul {
   margin: 2.5% 0 0 10%;
 }
 
+a {
+  text-decoration: underline;
+  color: #cccccc;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 p {
   font-family: 'Lexend', sans-serif;
   font-weight: 300;

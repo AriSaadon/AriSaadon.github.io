@@ -3,9 +3,9 @@
         "detail": {
             "firstname": "Ari.",
             "lastname": "Saadon",
-            "contact": "ari._s@hotmail.com <br> +31 6 385 040 57",
+            "contact": "<a href='mailto:ari._s@hotmail.com'>ari._s@hotmail.com</a> <br> <a href='tel:+31638504057'>+31 6 385 040 57</a>",
             "details": "11-09-1996 <br> Nederlands <br> Rijbewijs AM-B <br> 1318 LZ Almere",
-            "languages": "Nederlands uitstekend <br> Engels uitstekend <br> Koerdisch matig"
+            "languages": "Uitstekend <a onclick=updateContent('NL')>Nederlands</a> <br> Uitstekend <a onclick=updateContent('EN')>Engels</a> <br> Matig Koerdisch"
         }
     },
 

@@ -8,7 +8,8 @@ class Square {
 
 	addClickListener() {
 		this.element.addEventListener('click', () => {
-			targetProgress = this.targetProgress;
+			if (this.targetProgress >= 0)
+				targetProgress = this.targetProgress;
 		});
 	}
 
