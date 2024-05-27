@@ -89,6 +89,10 @@ li {
   line-height: 1.5vw;
   letter-spacing: 0.03vw;
 
+  text-decoration: underline;
+  text-decoration-thickness: 0.01vw;
+  text-decoration-color: #3f3e3e;
+
   list-style-type: circle;
   
   padding: 0px;
