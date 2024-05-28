@@ -193,6 +193,10 @@ span {
     line-height: 3.4vw;
   }
 
+  /* Square A */
+  #squareA {
+    border-right: 0 solid #3f3f3f;
+  }
 
   #A1 {
     display: flex; 

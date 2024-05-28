@@ -100,7 +100,7 @@ function initializeSquares(){
 		]),
 		new Square('squareC', 0.33, [
 			{ progress: 0.0, x: 0.04, y: 0.325, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.16, x: 0.04, y: 0.75, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.16, x: 0.04, y: 0.7, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 0.33, x: 0.04, y: 0.34, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'detail' },
 			{ progress: 0.5, x: 0.04, y: 0.25, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 0.83, x: 0.04, y: 0.25, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
@@ -108,8 +108,8 @@ function initializeSquares(){
 		]),
 		new Square('squareD', 0.5, [
 			{ progress: 0.0, x: 0.04, y: 0.4, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.16, x: 0.04, y: 0.8, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.33, x: 0.04, y: 0.8, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.16, x: 0.04, y: 0.75, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.33, x: 0.04, y: 0.75, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 0.5, x: 0.04, y: 0.33, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'detail' },
 			{ progress: 0.66, x: 0.04, y: 0.3, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 0.83, x: 0.04, y: 0.3, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
@@ -117,9 +117,9 @@ function initializeSquares(){
 		]),
 		new Square('squareE', 0.66, [
 			{ progress: 0.0, x: 0.04, y: 0.475, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.16, x: 0.04, y: 0.85, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.33, x: 0.04, y: 0.85, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
-			{ progress: 0.5, x: 0.04, y: 0.85, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.16, x: 0.04, y: 0.8, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.33, x: 0.04, y: 0.8, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
+			{ progress: 0.5, x: 0.04, y: 0.8, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 0.66, x: 0.04, y: 0.4, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'detail' },
 			{ progress: 0.83, x: 0.04, y: 0.35, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 			{ progress: 1.0, x: 0.04, y: 0.475, width: 0.94, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
