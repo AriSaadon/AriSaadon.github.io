@@ -3,6 +3,8 @@ function initializeSquares(){
 	const color = '#1F1F1F';
 
 	const width = window.innerWidth;
+	const height = window.innerHeight;
+
 	return width >= 1550 ? 
 	[
 		new Square('squareA', -1, [
@@ -43,7 +45,7 @@ function initializeSquares(){
 			{ progress: 1.0, x: 0.425, y: 0.6, width: 0.425, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
 		]),
 	] 
-	: width >= 1100 ?	
+	: (width / height) > 0.75 ?	
 	[
 		new Square('squareA', -1, [
 			{ progress: 0.0, x: 0.01, y: 0.1, width: 0.24, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },
