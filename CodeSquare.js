@@ -33,7 +33,7 @@ class Square {
 		this.element.style.top = `${y}px`;
 		this.element.style.borderRadius = `${this.lerp(lowerKeyframe.border, upperKeyframe.border, localProgress)}px`;
 		this.element.style.backgroundColor = backgroundColor;
-		this.element.style.fontSize = `${Math.min(height * 0.2, 30)}px`;
+		this.element.style.fontSize = `${width * 0.1}px`;
 
 		this.updateContent(visibleTag);
 	}
