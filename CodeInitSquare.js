@@ -46,8 +46,8 @@ function initializeSquares(){
 	:
 	[
 		new Square('squareA', -1, [
-			{ progress: 0.0, x: 0.01, y: 0.05, width: 0.24, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },
-			{ progress: 1.0, x: 0.01, y: 0.05, width: 0.24, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },
+			{ progress: 0.0, x: 0.01, y: 0.1, width: 0.24, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },
+			{ progress: 1.0, x: 0.01, y: 0.1, width: 0.24, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },
 		]),
 		new Square('squareB', 0.16, [
 			{ progress: 0.0, x: 0.27, y: 0.3, width: 0.72, height: 0.05, border: 0, backgroundColor: color, visibleTag: 'summary' },
