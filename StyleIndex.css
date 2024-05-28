@@ -6,38 +6,10 @@ body {
   overflow: hidden;
   margin: 0;
   height: 100vh;
+  color: #aaaaaa;
+  text-wrap: balance;
 
   background-color: #1F1F1F;
-}
-
-.square {
-  position: absolute;
-
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  /*overflow: hidden;*/
-}
-
-#contentTab {
-  align-content: center;
-  border-right: 1px solid #3f3f3f;
-}
-
-.content {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  color: #aaaaaa;
-
-  text-wrap: balance;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .hidden {
@@ -48,12 +20,20 @@ body {
   display: block;
 }
 
-#A1 h1 {
-  font-size: 5.4vw;
-  line-height: 3.9vw;
-  color: #E14B3C;
-  margin: 0;
+.square {
+  position: absolute;
+
+  left: 50%;
+  transform: translate(-50%, 0);
 }
+
+.content {
+  align-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8vw;
@@ -64,33 +44,6 @@ h1 {
   
   padding: 0px;
   margin: 0 0 2% 0;
-}
-
-h2 {
-  font-family: 'Raleway';
-  font-size: 2.5vw;
-  font-weight: 100;
-  line-height: 3.6vw;
-  
-  padding: 0px;
-  margin: 0 0 0 0;
-}
-
-span {
-  color: #c05454;
-  font-weight: 200;
-  background-color: rgba(201, 68, 58, 0.1);
-  padding: 0 0.2vw;
-  border-radius: 0.2vw;
-  display: inline;
-}
-
-#work li {
-  font-size: 0.8vw;
-}
-
-#work li:hover {
-  color: #aaaaaa;
 }
 
 li {
@@ -111,8 +64,14 @@ li:hover {
   cursor: pointer;
 }
 
-ul {
-  margin: 0 0 0 10%;
+p {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 300;
+  font-size: 0.85vw;
+  
+  line-height: 1.15vw;
+  
+  margin: 0 0 1.25vw 2%;
 }
 
 a {
@@ -124,14 +83,37 @@ a:hover {
   cursor: pointer;
 }
 
-p {
-  font-family: 'Lexend', sans-serif;
-  font-weight: 300;
-  font-size: 0.85vw;
+span {
+  color: #c05454;
+  font-weight: 200;
+  background-color: rgba(201, 68, 58, 0.1);
+  padding: 0 0.2vw;
+  border-radius: 0.2vw;
+  display: inline;
+}
+
+
+
+/* Square A */
+#squareA {
+  border-right: 1px solid #3f3f3f;
+}
+
+#A1 h1 {
+  font-size: 5.4vw;
+  line-height: 3.9vw;
+  color: #E14B3C;
+  margin: 0;
+}
+
+#A1 h2 {
+  font-family: 'Raleway';
+  font-size: 2.5vw;
+  font-weight: 100;
+  line-height: 3.6vw;
   
-  line-height: 1.15vw;
-  
-  margin: 0 0 1.25vw 2%;
+  padding: 0px;
+  margin: 0 0 0 0;
 }
 
 #squareA p {
@@ -140,3 +122,23 @@ p {
   
   color: #b5b5b5;
 }
+
+
+
+/* Square E*/
+#work li {
+  font-size: 0.8vw;
+}
+
+#work li:hover {
+  color: #aaaaaa;
+}
+
+#work ul {
+  margin: 0 0 0 10%;
+}
+
+
+
+
+

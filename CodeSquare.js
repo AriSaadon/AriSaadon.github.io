@@ -39,7 +39,7 @@ class Square {
 	}
 
 	updateContent(visibleTag) {
-		const children = this.element.children[0].children;
+		const children = this.element.children;
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
 			if (child.getAttribute('data-tag') === visibleTag) {
