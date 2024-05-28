@@ -5,7 +5,7 @@ function initializeSquares(){
 	const width = window.innerWidth;
 	const height = window.innerHeight;
 
-	return width >= 1550 ? 
+	return width >= 1500 ? 
 	[
 		new Square('squareA', -1, [
 			{ progress: 0.0, x: 0.235, y: 0.13, width: 0.13, height: 0.65, border: 0, backgroundColor: color, visibleTag: 'detail' },

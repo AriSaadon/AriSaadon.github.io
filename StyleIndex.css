@@ -130,7 +130,7 @@ span {
 }
 
 
-@media (max-width: 1550px)  {
+@media (max-width: 1500px)  {
   h1 {
     font-size: 3.6vw;
     line-height: 3.6vw;
@@ -146,9 +146,6 @@ span {
     font-size: 1.8vw;
     line-height: 2.3vw;
   }
-
-
-
 
 
   #A1 h1 {
