@@ -10,9 +10,9 @@
 
 <body>
 
-    <div id="squareA" class="square" data-square="squareA">
+    <div id="squareA" class="square" style="align-content: center;" data-square="squareA">
 
-        <div id="A1" data-tag="detail" class="content">
+        <div id="A1" data-tag="detail">
             <h1 data-i18n="firstname"></h1>
             <h2 data-i18n="lastname"></h2>
             <p data-i18n="contact"></p>
@@ -97,6 +97,8 @@
         let targetProgress = 0.0;
 
         function animate() {
+            const squares = initializeSquares();
+
             let delta = targetProgress - scrollProgress;
 
             if (delta > 0.5) delta -= 1;

@@ -23,18 +23,6 @@ body {
 
 .square {
   position: absolute;
-
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.content {
-  align-content: center;
-
-  width: 100%;
-  height: 100%;
-
-  font-size: 100%;
 }
 
 h1 {
@@ -142,6 +130,50 @@ span {
 }
 
 
+
+@media (max-width: 1200px)  {
+  h1 {
+    font-size: 3.6vw;
+    line-height: 3.6vw;
+  }
+  
+  li {
+    font-family: 'Segoe UI', 'Roboto';
+    font-size: 2.2vw;
+    line-height: 3.0vw;
+  }
+
+  p {
+    font-size: 1.8vw;
+    line-height: 2.3vw;
+  }
+
+
+
+
+
+  #A1 h1 {
+    font-size: 10.8vw;
+    line-height: 7.8vw;
+  }
+
+  #A1 h2 {
+    font-size: 5vw;
+    line-height: 7.2vw;
+  }
+
+  #squareA p {
+    font-size: 2.0vw;
+    line-height: 2.6vw;
+    
+    color: #b5b5b5;
+  }
+
+
+  #work li {
+    font-size: 1.6vw;
+  }
+}
 
 
 
