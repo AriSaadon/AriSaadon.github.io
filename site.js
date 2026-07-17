@@ -15,7 +15,7 @@ const root = document.currentScript.getAttribute("src").replace("site.js", "");
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<header>
-    <h1><a href="${root}index.html">Aallmoes.eu</a> <span class="tagline">&mdash; llm knowledge, blog and timeline by Ari Saadon</span></h1>
+    <h1><a href="${root}index.html">Aallmoes.eu</a> <span class="tagline">&mdash; knowledge and timeline of llm development for poor europe and nederland</span></h1>
     <a class="contact" href="mailto:ari._s@hotmail.com">Contact</a>
   </header>`
 );
