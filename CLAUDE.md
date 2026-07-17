@@ -32,7 +32,7 @@ The sidebar doubles as a horizontal bar chart. Each entry in the `posts` array i
 ## Adding an entry
 
 1. Copy the newest file in `posts/` to `posts/YYYY-MM-DD-slug.html`, replace its `<title>`, `<h2>`, date line, and content.
-2. Add one line for the entry to the top of the `posts` array in `site.js` (newest first), with `score` and `icon` if it's about a specific model (add the lab's logo to `icons/` if it isn't there yet). The timeline everywhere updates from that.
+2. Add one line for the entry to the `posts` array in `site.js` (any order — the timeline sorts itself by date, newest first), with `score` and `icon` if it's about a specific model (add the lab's logo to `icons/` if it isn't there yet). The timeline everywhere updates from that.
 
 ## Development
 

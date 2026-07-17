@@ -129,10 +129,14 @@ nav.timeline .bar .num {
   font-size: 0.8rem;
 }
 
-nav.timeline .plain {
-  display: inline-block;
-  padding-left: 0.5rem;
-  font-size: 0.85rem;
+/* entries not about a model: title alone on the gray track, no blue bar */
+nav.timeline .bar.no-score {
+  background: none;
+  color: #222;
+}
+
+nav.timeline .bar.no-score:hover {
+  background: #d8d8d2;
 }
 
 nav.timeline .lab-icon {
