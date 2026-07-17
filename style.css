@@ -16,26 +16,28 @@ a {
 }
 
 header {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid #ddd;
-  background: #fff;
 }
 
 header .contact {
-  color: #1a5276;
+  position: absolute;
+  right: 2rem;
+  color: #fff;
   font-size: 0.9rem;
   text-decoration: none;
   padding: 0.35rem 0.9rem;
+  background: #1a5276;
   border: 1px solid #1a5276;
   border-radius: 4px;
 }
 
 header .contact:hover {
-  background: #1a5276;
-  color: #fff;
+  background: #14405d;
 }
 
 header h1 {
@@ -61,12 +63,19 @@ header h1 a {
 }
 
 nav.timeline {
-  width: 14rem;
+  width: 16rem;
   flex-shrink: 0;
   padding: 1.5rem 1rem;
   border-right: 1px solid #ddd;
 }
 
+nav.timeline .chart-caption {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* horizontal bar chart: date | axis line | bar growing rightward */
 nav.timeline ul {
   list-style: none;
   margin: 0;
@@ -74,13 +83,53 @@ nav.timeline ul {
 }
 
 nav.timeline li {
-  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+nav.timeline .track {
+  flex: 1;
+  min-width: 0;
+  border-left: 2px solid #ccc;
+}
+
+nav.timeline .bar {
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0 0.5rem;
+  border-radius: 0 4px 4px 0;
+  background: #1a5276;
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+nav.timeline .bar:hover {
+  background: #14405d;
+}
+
+nav.timeline .bar .num {
+  font-size: 0.8rem;
+}
+
+nav.timeline .plain {
+  display: inline-block;
+  padding-left: 0.5rem;
+  font-size: 0.85rem;
 }
 
 nav.timeline .date {
-  display: block;
-  font-size: 0.8rem;
+  flex-shrink: 0;
+  font-size: 0.7rem;
   color: #777;
+  white-space: nowrap;
 }
 
 main {
