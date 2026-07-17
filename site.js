@@ -1,6 +1,7 @@
 // Shared header + timeline, injected into every page.
 // To add an entry: create its file in posts/ and add one line to this array (newest first).
 const posts = [
+  { date: "2026-07-17", file: "2026-07-17-kimi-k3.html", title: "Kimi K3: open frontier intelligence" },
   { date: "2026-07-17", file: "2026-07-17-second-entry.html", title: "Second entry" },
   { date: "2026-07-17", file: "2026-07-17-first-entry.html", title: "First entry" },
 ];
@@ -11,7 +12,7 @@ const root = document.currentScript.getAttribute("src").replace("site.js", "");
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<header>
-    <h1><a href="${root}index.html">Aallmoes</a></h1>
+    <h1><a href="${root}index.html">Aallmoes</a> <span class="tagline">&mdash; llm knowledge, blog and timeline by Ari Saadon</span></h1>
     <a class="contact" href="mailto:ari._s@hotmail.com">Contact</a>
   </header>`
 );

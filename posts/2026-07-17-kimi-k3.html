@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimi K3: open frontier intelligence — Aallmoes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="layout">
+    <main>
+      <h2>Kimi K3: open frontier intelligence</h2>
+      <p><em>2026-07-17</em> — summary of <a href="https://www.kimi.com/blog/kimi-k3">Moonshot AI's announcement</a></p>
+
+      <p>Moonshot AI has announced Kimi K3, its most capable model to date: a 2.8-trillion-parameter model with native vision and a 1-million-token context window. It is the world's first open 3T-class model, aimed at long-horizon coding, knowledge work, and reasoning. Moonshot is candid that it still trails the top proprietary models — Claude Fable 5 and GPT 5.6 Sol — but claims frontier-level results across its evaluation suite, consistently beating the other open and proprietary models it tested.</p>
+
+      <p>The architecture rests on two new components: Kimi Delta Attention (KDA), an efficient foundation for scaling attention across long sequences, and Attention Residuals (AttnRes), which selectively retrieve representations across model depth instead of accumulating them uniformly. On top of that sits a much sparser Mixture of Experts — 16 of 896 experts active per token under a "Stable LatentMoE" framework. Moonshot claims these changes, plus refined training and data recipes, give roughly 2.5× better scaling efficiency than Kimi K2.</p>
+
+      <p>Training a 2.8T model at that sparsity required several supporting tricks: Quantile Balancing derives expert allocation directly from router-score quantiles (removing a sensitive balancing hyperparameter), Per-Head Muon optimizes attention heads independently, and new SiTU activations and Gated MLA improve activation control and attention selectivity. The model is quantization-aware trained from the SFT stage onward, using MXFP4 weights with MXFP8 activations for broad hardware compatibility, and Moonshot recommends serving it on "supernodes" of 64+ accelerators. A KDA prefix-caching implementation has been contributed to vLLM.</p>
+
+      <p>Coding is the headline capability. K3 is pitched at long, minimally supervised engineering sessions: navigating large repositories, orchestrating terminal tools, and mixing software engineering with visual reasoning (using screenshots to iterate on game dev, frontend, and CAD work). In a GPU kernel-optimization test — 24 hours per model, four kernel tasks on NVIDIA H200 and an alternative-vendor GPGPU — K3 performed competitively with Claude Fable 5 and substantially outperformed Opus 4.8, GPT 5.6 Sol, and GPT 5.5. An early K3 version reportedly handled most of the team's own kernel-optimization work late in development.</p>
+
+      <p>Two case studies push the coding claim further. K3 built "MiniTriton", a compact Triton-like GPU compiler from scratch — its own tile-level IR over MLIR, optimization passes, and a PTX code-generation pipeline — that matches or beats Triton and torch.compile on supported roofline benchmarks and sustains end-to-end nanoGPT training. In a separate 48-hour autonomous run, K3 designed and verified a chip (on open-source EDA tools, Nangate 45nm) to serve a nano model of its own architecture: 4 mm², timing closed at 100 MHz, over 8,700 tokens/s simulated decode throughput, 1.46M standard cells.</p>
+
+      <p>For scientific work, Moonshot describes K3 reproducing the I–Love–Q universal relations in computational astrophysics in about two hours — work estimated at one to two weeks for an experienced researcher. It cross-validated 20+ papers, evaluated 300+ equations of state, found inconsistencies in published formulas, wrote 3,000+ lines of Python, and produced an interactive dashboard of the results.</p>
+
+      <p>On the knowledge-work side, the showcases are research reports with interactive visualization: a 42-year ASIC industry study built through 120+ rounds of recursive self-improvement (2.8k+ web searches, 11k+ pages, 87 quarterly reports), a fusion-industry consulting report, and an analysis of 391 gravitational-wave events using 20+ concurrent subagents. Kimi Work also gains two new features, Widgets and Dashboard, for persistent interactive components. Thanks to the native multimodal architecture, K3 also does video editing — it cut its own teaser from 56 source clips with beat-synchronized, motion-matched edits.</p>
+
+      <p>Availability: K3 is live today on Kimi.com, Kimi Work (desktop 3.1.0+), Kimi Code (via <code>/model</code>), and the Kimi API as <code>kimi-k3</code>. At launch it runs at max thinking effort only; low and high modes come later. API pricing is $0.30/MTok for cache-hit input, $3.00/MTok for cache-miss input, and $15.00/MTok for output — with a claimed 90%+ cache hit rate in coding workloads on Mooncake's disaggregated inference stack. Crucially for the open ecosystem: full weights are promised by July 27, 2026, alongside a technical report.</p>
+
+      <p>The benchmark footnotes are unusually detailed and worth a read: results are reported per agentic harness (KimiCode, Claude Code, or Codex), at max reasoning effort, with sources cited per competitor score. One notable detail: on PostTrain Bench, Claude Fable 5 requests refused under its usage policy automatically fell back to Opus 4.8. On BrowseComp, K3 scores 90.4 when given the full 1M context with no context management.</p>
+
+      <p>Moonshot also lists honest limitations. K3 was trained with preserved thinking history — harnesses that drop it, or sessions switched mid-way from another model, can become highly unstable. It is also "excessively proactive": trained on long-horizon tasks, it may make unexpected decisions on the user's behalf when intent is ambiguous, so boundary constraints belong in the system prompt or AGENTS.md. And despite the benchmarks, Moonshot concedes a noticeable user-experience gap versus Claude Fable 5 and GPT 5.6 Sol. Still: an open 2.8T model with weights landing in ten days is a milestone for open-source AI.</p>
+    </main>
+  </div>
+  <script src="../site.js"></script>
+</body>
+</html>

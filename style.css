@@ -5,26 +5,48 @@
 body {
   margin: 0;
   font-family: Georgia, serif;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: #222;
+  background: #fafaf8;
+}
+
+a {
+  color: #1a5276;
 }
 
 header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
 }
 
 header .contact {
-  color: #777;
+  color: #1a5276;
   font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #1a5276;
+  border-radius: 4px;
+}
+
+header .contact:hover {
+  background: #1a5276;
+  color: #fff;
 }
 
 header h1 {
   margin: 0;
   font-size: 1.4rem;
+}
+
+header .tagline {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #777;
 }
 
 header h1 a {
@@ -42,7 +64,7 @@ nav.timeline {
   width: 14rem;
   flex-shrink: 0;
   padding: 1.5rem 1rem;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ddd;
 }
 
 nav.timeline ul {
@@ -52,7 +74,7 @@ nav.timeline ul {
 }
 
 nav.timeline li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.9rem;
 }
 
 nav.timeline .date {
@@ -63,8 +85,13 @@ nav.timeline .date {
 
 main {
   flex: 1;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   min-width: 0;
+  max-width: 42rem;
+}
+
+main h2 {
+  margin-top: 0;
 }
 
 @media (max-width: 40rem) {
@@ -74,6 +101,6 @@ main {
   nav.timeline {
     width: auto;
     border-right: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
   }
 }
