@@ -18,10 +18,17 @@ document.body.insertAdjacentHTML(
   </header>`
 );
 
+// "2026-07-17" -> "17 Jul 2026"
+const prettyDate = (d) => {
+  const [y, m, day] = d.split("-");
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return `${Number(day)} ${months[m - 1]} ${y}`;
+};
+
 const items = posts
   .map(
     (p) => `<li>
-      <span class="date">${p.date}</span>
+      <a class="date" href="${root}posts/${p.file}">${prettyDate(p.date)}</a>
       ${p.icon == null ? "" : `<img class="lab-icon" src="${root}icons/${p.icon}" alt="">`}
       <span class="track${p.score == null ? "" : " has-bar"}">${p.score == null
         ? `<a class="plain" href="${root}posts/${p.file}">${p.title}</a>`

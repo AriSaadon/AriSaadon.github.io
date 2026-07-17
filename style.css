@@ -143,9 +143,15 @@ nav.timeline .lab-icon {
 
 nav.timeline .date {
   flex-shrink: 0;
-  font-size: 0.7rem;
-  color: #777;
+  width: 5.4rem;
+  font-size: 0.88rem;
+  color: #222;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+nav.timeline .date:hover {
+  text-decoration: underline;
 }
 
 /* landing page: no main, a wide timeline centered on its own */
