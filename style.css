@@ -58,7 +58,7 @@ header h1 a {
 
 .layout {
   display: flex;
-  max-width: 60rem;
+  max-width: 74rem;
   margin: 0 auto;
 }
 
@@ -93,6 +93,12 @@ nav.timeline .track {
   flex: 1;
   min-width: 0;
   border-left: 2px solid #ccc;
+}
+
+/* gray backdrop showing where a score of 100 would reach */
+nav.timeline .track.has-bar {
+  background: #e4e4e0;
+  border-radius: 0 4px 4px 0;
 }
 
 nav.timeline .bar {
@@ -140,6 +146,17 @@ nav.timeline .date {
   font-size: 0.7rem;
   color: #777;
   white-space: nowrap;
+}
+
+/* landing page: no main, a wide timeline centered on its own */
+.layout.home {
+  justify-content: center;
+}
+
+.layout.home nav.timeline {
+  border-right: none;
+  width: 100%;
+  max-width: 48rem;
 }
 
 main {

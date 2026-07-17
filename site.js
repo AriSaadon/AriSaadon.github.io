@@ -23,7 +23,7 @@ const items = posts
     (p) => `<li>
       <span class="date">${p.date}</span>
       ${p.icon == null ? "" : `<img class="lab-icon" src="${root}icons/${p.icon}" alt="">`}
-      <span class="track">${p.score == null
+      <span class="track${p.score == null ? "" : " has-bar"}">${p.score == null
         ? `<a class="plain" href="${root}posts/${p.file}">${p.title}</a>`
         : `<a class="bar" style="width:${p.score}%" href="${root}posts/${p.file}"><span class="label">${p.title}</span><span class="num">${p.score}</span></a>`}</span>
     </li>`
