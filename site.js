@@ -2,8 +2,9 @@
 // To add an entry: create its file in posts/ and add one line to this array (newest first).
 // "score" is the Artificial Analysis intelligence score (0-100); omit it for entries
 // that aren't about a specific model and no bar is shown.
+// "icon" is a filename in icons/ (the model's lab logo); omit it for no icon.
 const posts = [
-  { date: "2026-07-17", file: "2026-07-17-kimi-k3.html", title: "Kimi K3", score: 57 },
+  { date: "2026-07-17", file: "2026-07-17-kimi-k3.html", title: "Kimi K3", score: 57, icon: "moonshot.ico" },
 ];
 
 // "" on index.html, "../" on pages inside posts/, derived from this script tag's src.
@@ -21,9 +22,10 @@ const items = posts
   .map(
     (p) => `<li>
       <span class="date">${p.date}</span>
+      ${p.icon == null ? "" : `<img class="lab-icon" src="${root}icons/${p.icon}" alt="">`}
       <span class="track">${p.score == null
         ? `<a class="plain" href="${root}posts/${p.file}">${p.title}</a>`
-        : `<a class="bar" style="width:${p.score}%" href="${root}posts/${p.file}">${p.title}<span class="num">${p.score}</span></a>`}</span>
+        : `<a class="bar" style="width:${p.score}%" href="${root}posts/${p.file}"><span class="label">${p.title}</span><span class="num">${p.score}</span></a>`}</span>
     </li>`
   )
   .join("");
